@@ -62,7 +62,7 @@ if [ -z "$GMXRC" ]; then
 fi
 source $GMXRC
 
-=============================================
+# =============================================
 
 # perl
 PATH="/home/bauer/perl5/bin${PATH:+:${PATH}}"; export PATH;
