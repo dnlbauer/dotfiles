@@ -64,9 +64,35 @@ source $GMXRC
 
 # =============================================
 
+# ======= utility functions
+
+# supply id as
+pdb() {
+    URL=http://www.rcsb.org/pdb/files/$1.pdb.gz
+    if [ -z "$2" ]; then
+        2="./"
+    fi
+    
+    wget $URL -P $2
+    gunzip $2/$1.pdb.gz
+}
+
+# =========================
+
 # perl
 PATH="/home/bauer/perl5/bin${PATH:+:${PATH}}"; export PATH;
 PERL5LIB="/home/bauer/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/bauer/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/bauer/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/bauer/perl5"; export PERL_MM_OPT;
+
+# copernicus
+export CPC_HOME=/opt/copernicus
+export PATH=$PATH:$CPC_HOME
+
+# cuda
+export CUDA_HOME=/opt/cuda;
+
+PYTHONPATH="$HOME/scripts"
+PYTHONPATH="$PYTHONPATH:/opt/modeller9.19/modlib:/opt/modeller9.19/lib/x86_64-intel8/python3.3"
+export PYTHONPATH
