@@ -38,6 +38,10 @@ setKeyboard() {
   setxkbmap -layout $1
 }
 
+eval $(thefuck --alias)
+# You can use whatever you want as an alias, like for Mondays:
+eval $(thefuck --alias fu)
+
 # Gromacs stuff
 # ==================================================
 swapgmx() {
@@ -96,3 +100,5 @@ export CUDA_HOME=/opt/cuda;
 PYTHONPATH="$HOME/scripts"
 PYTHONPATH="$PYTHONPATH:/opt/modeller9.19/modlib:/opt/modeller9.19/lib/x86_64-intel8/python3.3"
 export PYTHONPATH
+
+alias vim='vim --servername vim'
