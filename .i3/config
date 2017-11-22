@@ -67,6 +67,10 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# move workspace left/right
+bindsym $mod+Shift+greater move workspace to output left
+bindsym $mod+Shift+less move workspace to output right
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
@@ -99,9 +103,12 @@ set $workspace3 3
 set $workspace4 4
 set $workspace5 5 
 set $workspace6 6
-set $workspace7 
-set $workspace8 
-set $workspace9 
+set $workspace7 7
+ #
+set $workspace8 8
+#
+set $workspace9 9
+#
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -160,15 +167,18 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	position top
-        status_command i3blocks -c ~/.i3/i3blocks.conf
-}
+#bar {
+	#position top
+        #status_command i3blocks -c ~/.i3/i3blocks.conf
+#}
 
-#$workspace1 output DVI-D-0
-#$workspace7 output HDMI-0 
-#$workspace8 output HDMI-0 
-#$workspace9 output HDMI-0 
+exec_always --no-startup-id ~/.config/polybar/polybar.sh
+
+workspace $workspace1 output DVI-D-0
+workspace $workspace7 output HDMI-0 
+workspace $workspace8 output HDMI-0 
+workspace $workspace9 output HDMI-0 
+
 
 for_window [window_role="pop-up"] floating enable
 for_window [class="Tk"] floating enable
@@ -192,9 +202,9 @@ exec --no-startup-id pidgin
 
 
 exec feh --bg-scale ~/wallpaper.jpg
-exec volumeicon
+#exec volumeicon
 exec thunar --daemon
-exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/.lockscreen/`ls ~/lockscreens | shuf -n 1` -t -f'
+exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/.lockscreen/`ls /home/bauer/lockscreens | shuf -n 1` -t -f'
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
@@ -213,3 +223,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86HomePage exec "i3lock -i ~/lockscreens/`ls ~/lockscreens | shuf -n 1` -t -f"
+
+# reload workspace layouts
+exec --no-startup-id "i3-msg 'workspace 9; append_layout /home/bauer/.i3/workspace-9.json'"
