@@ -104,8 +104,6 @@ PYTHONPATH="$PYTHONPATH:/opt/modeller/modlib:/opt/modeller/lib/x86_64-intel8/pyt
 export PYTHONPATH
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/modeller/lib/x86_64-intel8"
 
-export TERMINAL=termite
-export TERM=termite
 export BROWSER=firefox
 
 alias vim='vim --servername vim'
