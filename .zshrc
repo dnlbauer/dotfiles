@@ -106,4 +106,3 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/modeller/lib/x86_64-intel8"
 
 export BROWSER=firefox
 
-alias vim='vim --servername vim'
