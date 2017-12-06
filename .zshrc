@@ -97,8 +97,15 @@ export PATH=$PATH:$CPC_HOME
 # cuda
 export CUDA_HOME=/opt/cuda;
 
-PYTHONPATH="$HOME/scripts"
-PYTHONPATH="$PYTHONPATH:/opt/modeller9.19/modlib:/opt/modeller9.19/lib/x86_64-intel8/python3.3"
+#PYTHONPATH="$HOME/scripts"
+
+#modeller
+PYTHONPATH="$PYTHONPATH:/opt/modeller/modlib:/opt/modeller/lib/x86_64-intel8/python3.3"
 export PYTHONPATH
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/modeller/lib/x86_64-intel8"
+
+export TERMINAL=termite
+export TERM=termite
+export BROWSER=firefox
 
 alias vim='vim --servername vim'
