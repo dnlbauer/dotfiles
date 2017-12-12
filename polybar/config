@@ -51,7 +51,7 @@ scroll-down = i3wm-wsprev
 
 [bar/example_left]
 inherit = bar/example
-monitor = ${env:MONITOR:DVI-D-0}
+monitor = ${env:MONITOR:DVI-D-1}
 modules-left = i3
 modules-center = 
 modules-right = spotify volume filesystem memory cpu gpu date 
