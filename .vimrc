@@ -15,6 +15,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'hublot/vim-gromacs'
 Plugin 'lervag/vimtex'
+Plugin 'ibab/vim-snakemake'
 
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
