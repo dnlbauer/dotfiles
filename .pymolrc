@@ -1,0 +1,4 @@
+set opaque_background, 0
+log_open /tmp/pymol_log.pml
+set cartoon_side_chain_helper, 1
+set cartoon_highlight_color, grey50
