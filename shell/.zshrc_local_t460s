@@ -3,6 +3,9 @@ source /opt/gromacs-2018.30/bin/GMXRC
 # wham
 export PATH="/opt/wham/wham:/opt/wham/wham-2d:${PATH}" # binaries
 
+#anaconda
+export PATH="/home/bauer/anaconda3/bin:$PATH"
+
 # python
 #PYTHONPATH="$PYTHONPATH:/opt/modeller/modlib:/opt/modeller/lib/x86_64-intel8/python3.3"
 #export PYTHONPATH

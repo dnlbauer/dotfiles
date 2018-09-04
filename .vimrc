@@ -1,4 +1,7 @@
 set nocompatible              " be iMproved, required
+set number
+
+
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
@@ -9,16 +12,17 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+" Plugin 'zchee/deoplete-jedi'
 Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'hublot/vim-gromacs'
 Plugin 'lervag/vimtex'
 Plugin 'ibab/vim-snakemake'
-
+Plugin 'Yggdroot/indentLine'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'morhetz/gruvbox'
 let g:vim_markdown_folding_disabled = 1
 
 " All of your Plugins must be added before the following line
@@ -37,3 +41,9 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 syntax on
+set softtabstop=4
+
+
+colorscheme gruvbox
+let g:gruvbox_contrast_dark = 'hard'
+set background=dark
