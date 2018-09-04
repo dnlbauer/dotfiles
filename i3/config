@@ -171,8 +171,12 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 #bar {
 #	position top
-#        status_command i3blocks -c ~/.i3/i3blocks.conf
+#       status_command i3blocks -c ~/.i3/i3blocks.conf
 #}
+
+
+# hide window border
+new_window 1pixel
 
 exec_always --no-startup-id ~/.config/polybar/polybar.sh
 
@@ -197,9 +201,9 @@ assign [class="Mendeley"] → $workspace7
 #assign [class="Spotify"] → $workspace8
 assign [title="Buddy List"] → $workspace9
 exec --no-startup-id thunderbird
-exec --no-startup-id mendeleydesktop
-exec --no-startup-id spotify
-exec --no-startup-id pidgin
+#exec --no-startup-id mendeleydesktop
+#exec --no-startup-id spotify
+#exec --no-startup-id pidgin
 
 
 
@@ -209,9 +213,9 @@ exec thunar --daemon
 exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/.lockscreen/`ls /home/bauer/lockscreens | shuf -n 1` -t -f'
 
 # Pulse Audio controls
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
+bindsym --release XF86AudioLowerVolume exec --no-startup-id amixer -D pulse sset Master 5%- #decrease sound volume
+bindsym --release XF86AudioRaiseVolume exec --no-startup-id amixer -D pulse sset Master 5%+ #increase sound volume
+bindsym --release XF86AudioMute exec --no-startup-id amixer -D pulse sset Master toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
@@ -226,5 +230,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86HomePage exec "i3lock -i ~/lockscreens/`ls ~/lockscreens | shuf -n 1` -t -f"
 
+# change ouput
+bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/change_monitor.sh	
+
 # reload workspace layouts
 exec --no-startup-id "i3-msg 'workspace 9; append_layout /home/bauer/.i3/workspace-9.json'"
+
+exec --no-startup-id nm-applet

@@ -49,24 +49,6 @@ wm-restack = i3
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
-[bar/example_left]
-inherit = bar/example
-monitor = ${env:MONITOR:DVI-D-1}
-modules-left = i3
-modules-center = 
-modules-right = spotify volume filesystem memory cpu gpu date 
-tray-position = right
-tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
-
-
-[bar/example_right]
-inherit = bar/example
-monitor = ${env:MONITOR:HDMI-0}
-modules-left = i3
-modules-right = date
-
 [bar/example_laptop]
 inherit = bar/example
 modules-left = i3
@@ -288,10 +270,11 @@ label = %time% %date%
 format =  <label>
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 format-volume = <label-volume> <bar-volume>
 label-volume = 
 label-volume-foreground = ${root.foreground}
+interval=5
 
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
@@ -311,7 +294,6 @@ bar-volume-fill = -
 bar-volume-fill-font = 2
 bar-volume-empty = -
 bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
 type = internal/battery
