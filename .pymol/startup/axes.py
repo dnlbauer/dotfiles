@@ -37,8 +37,8 @@ class PutCenterCallback(object):
             t = cpv.add(t, off_m)
 
         z = -v[11] / 30.0
-        m = [z, 0, 0, t[0] / z, 0, z, 0, t[1] / z, 0, 0, z, t[2] / z, 0, 0, 0, 1]
-        cmd.set_object_ttt(self.name, m, homogenous=1)
+        m = [z, 0, 0, 0, 0, z, 0, 0, 0, 0, z, 0, t[0] / z, t[1] / z, t[2] / z, 1]
+        cmd.set_object_ttt(self.name, m)
 
 def axes(name='axes'):
     '''
