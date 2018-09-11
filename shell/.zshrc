@@ -15,6 +15,7 @@ export EDITOR='vim'
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 export TERMINAL="terminator"
 export BROWSER="firefox"
+export PAGER='most'
 
 source ~/.zshrc_functions
 source ~/.zshrc_local
@@ -29,6 +30,3 @@ eval "$(fasd --init auto)"
 
 # marker
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
-
-# the fuck?
-eval $(thefuck --alias)

@@ -1,0 +1,26 @@
+# gromacs
+if [ -z "$GMXRC" ]; then
+    GMXRC="/opt/gromacs-2018/bin/GMXRC"
+fi
+source $GMXRC
+
+export CUDA_HOME=/opt/cuda
+
+# wham
+export PATH="/opt/wham/wham:/opt/wham/wham-2d:${PATH}" # binaries
+
+# pymol2
+export PATH="/opt/pymol2:$PATH"
+
+# python
+PYTHONPATH="$PYTHONPATH:/opt/modeller/modlib:/opt/modeller/lib/x86_64-intel8/python3.3"
+export PYTHONPATH
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/modeller/lib/x86_64-intel8"
+
+
+#backup
+#if [[ ! -e /tmp/$(date +%u).sem ]]
+#then
+#    touch /tmp/$(date +%u).sem
+#    bash ~/.sync_home/sync.sh
+#fi
