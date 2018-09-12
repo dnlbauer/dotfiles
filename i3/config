@@ -180,10 +180,10 @@ new_window 1pixel
 
 exec_always --no-startup-id ~/.config/polybar/polybar.sh
 
-workspace $workspace1 output DVI-D-0
-workspace $workspace7 output HDMI-0 
-workspace $workspace8 output HDMI-0 
-workspace $workspace9 output HDMI-0 
+workspace $workspace1 output HDMI-0
+workspace $workspace7 output DP-0 
+workspace $workspace8 output DP-0 
+workspace $workspace9 output DP-0 
 
 
 for_window [window_role="pop-up"] floating enable
@@ -237,3 +237,4 @@ bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/change_monitor.sh
 exec --no-startup-id "i3-msg 'workspace 9; append_layout /home/bauer/.i3/workspace-9.json'"
 
 exec --no-startup-id nm-applet
+exec --no-startup-id xfsettingsd
