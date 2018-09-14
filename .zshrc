@@ -39,3 +39,11 @@ eval "$(fasd --init auto)"
 
 # marker
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+
+# clipboard
+alias clip='xsel --clipboard'
+
+alias groclean='rm \#*'
+alias sm='snakemake'
+alias ls='ls -lh'
+alias workon='source activate' # enable anaconda environ
