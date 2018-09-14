@@ -22,9 +22,14 @@ export BROWSER="firefox"
 export PAGER='most'
 
 source ~/.zshrc_functions
-source ~/.zshrc_local
+if [ -f $HOME/.zshrc_local ]; 
+then
+source $HOME/.zshrc_local
+fi
 
 # alter path
+export PATH="/opt/pymol:${PATH}"
+export PATH="$HOME/anaconda3/bin:${PATH}" # binaries
 export PATH="$HOME/bin:${PATH}" # binaries
 export PATH="$HOME/scripts:${PATH}" # scripts
 export PATH="$HOME/.local/bin:${PATH}" # python executeables
