@@ -1,1 +1,0 @@
-/home/bauer/dotfiles/.vim
