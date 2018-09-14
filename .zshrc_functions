@@ -35,9 +35,4 @@ pdb() {
     gunzip $2/$1.pdb.gz
 }
 
-# clipboard
-alias clip='xsel --clipboard'
 
-alias groclean='rm \#*'
-alias sm='snakemake'
-alias ls='ls -lh'
