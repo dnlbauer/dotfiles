@@ -71,7 +71,7 @@ inherit = bar/example
 modules-left = i3
 tray-position = right
 tray-padding = 2
-modules-right = spotify volume filesystemroot memory cpu battery battery2 date
+modules-right = spotify volume filesystemroot memory cpu battery1 battery2 date
 modules-center = xwindow
 
 [module/xwindow]
@@ -306,32 +306,6 @@ bar-volume-empty = -
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
-[module/battery]
-type = internal/battery
-battery = BAT0
-adapter = ADP1
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
-
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
-
-format-full-prefix = " "
-format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-foreground = ${colors.foreground-alt}
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
 
 [module/temperature]
 type = internal/temperature
@@ -406,3 +380,35 @@ tail = false
 format =  <label>
 ; vim:ft=dosini
 
+[module/battery1]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-charging-underline = #ffb52a
+
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.foreground-alt}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+<!-- ramp-capacity-foreground = ${colors.foreground-alt} -->
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+[module/battery2]
+inherit = module/battery1
+battery = BAT1
