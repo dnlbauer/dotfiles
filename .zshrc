@@ -28,6 +28,7 @@ source $HOME/.zshrc_local
 fi
 
 # alter path
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/opt/pymol:${PATH}"
 export PATH="$HOME/anaconda3/bin:${PATH}" # binaries
 export PATH="$HOME/bin:${PATH}" # binaries
