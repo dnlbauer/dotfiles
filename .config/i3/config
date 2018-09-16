@@ -99,11 +99,12 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $workspace0 0
 set $workspace1 1
 set $workspace2 2
 set $workspace3 3
 set $workspace4 4
-set $workspace5 5 
+set $workspace5 5
 set $workspace6 6
 set $workspace7 7
  #
@@ -113,6 +114,7 @@ set $workspace9 9
 #
 
 # switch to workspace
+bindsym $mod+0 workspace $workspace0
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
@@ -124,6 +126,7 @@ bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
 
 # move focused container to workspace
+bindsym $mod+Shift+0 move container to workspace $workspace0
 bindsym $mod+Shift+1 move container to workspace $workspace1
 bindsym $mod+Shift+2 move container to workspace $workspace2
 bindsym $mod+Shift+3 move container to workspace $workspace3
@@ -180,11 +183,9 @@ new_window 1pixel
 
 exec_always --no-startup-id ~/.config/polybar/polybar.sh
 
-workspace $workspace1 output HDMI-0
 workspace $workspace7 output DP-0 
 workspace $workspace8 output DP-0 
 workspace $workspace9 output DP-0 
-
 
 for_window [window_role="pop-up"] floating enable
 for_window [class="Tk"] floating enable
