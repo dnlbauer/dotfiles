@@ -63,10 +63,11 @@ tray-padding = 2
 
 [bar/example_right]
 inherit = bar/example
-monitor = ${env:MONITOR:DP-0}
+monitor = ${env:MONITOR:DP-4}
 modules-left = i3
 
 [bar/example_laptop]
+monitor = ${env:MONITOR:eDP-1}
 inherit = bar/example
 modules-left = i3
 tray-position = right

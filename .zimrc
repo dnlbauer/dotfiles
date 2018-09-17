@@ -27,6 +27,7 @@ zssh_ids=(id_ed25519)
 # Set your desired prompt here
 #POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='black'
 #POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='009'
+export TERM="xterm-256color"
 DEFAULT_USER=bauer
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context  dir vcs anaconda)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs status time)
