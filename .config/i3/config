@@ -8,7 +8,7 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-exec xrandr --auto --output DVI-D-0 --left-of HDMI-0 --primary
+exec xrandr --auto --output DP-4 --right-of HDMI-0 --primary
 
 set $mod Mod4
 
