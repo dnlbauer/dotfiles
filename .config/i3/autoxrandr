@@ -1,0 +1,6 @@
+#!/bin/bash
+for output in $(xrandr | grep '\Wconnected' | awk '{ print $1 }'); do
+	if [[ $output =~ ^eDP.*$ ]]; then
+		xrandr --dpi 150
+	fi
+done

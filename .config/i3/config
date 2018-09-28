@@ -8,7 +8,8 @@
 # i3 config file (v4)
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
-exec xrandr --auto --output DP-4 --right-of HDMI-0 --primary
+# exec xrandr --auto --output DP-4 --right-of HDMI-0 --primary --dpi 150
+exec --no-startup-id ~/.config/i3/autoxrandr
 
 set $mod Mod4
 
