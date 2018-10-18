@@ -5,17 +5,17 @@ if [ -f `which powerline-daemon` ]; then
     . /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
-# gromacs needs to be before ZIM for autocompletion
-if [ -z "$GMXRC" ]; then
-    GMXRC="/opt/gromacs-2018/bin/GMXRC"
-fi
-source $GMXRC
-
 # Change default zim location
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 
 # Start zim
 [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
+
+# gromacs needs to be before ZIM for autocompletion
+if [ -z "$GMXRC" ]; then
+    GMXRC="/opt/gromacs-2018/bin/GMXRC"
+fi
+source $GMXRC
 
 # preferences
 export LANG=en_US.UTF-8
@@ -24,6 +24,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 export TERMINAL="terminator"
 export BROWSER="firefox"
 export PAGER='most'
+export BAT_PAGER='less'
 
 # alter path
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -33,6 +34,9 @@ export PATH="$HOME/scripts:${PATH}" # scripts
 export PATH="$HOME/.local/bin:${PATH}" # python executeables
 
 # aliases
+if [ -f .cargo/bin/bat ]; then
+    alias cat='bat'
+fi	
 alias clip='xsel --clipboard'
 alias groclean='rm \#*'
 alias sm='snakemake'
