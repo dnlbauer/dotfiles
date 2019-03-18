@@ -26,16 +26,10 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 3
 
-font-0 = "Noto Sans:size=14:style=Regular;1"
-font-1 = unifont:fontformat=truetype:size=14:antialias=false;0
-font-2 = FontAwesome:size=14;0
-
-
 wm-restack = i3
 ;override-redirect = true
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
-
 
 [bar/laptop]
 monitor = ${env:MONITOR:eDP-1}
@@ -46,22 +40,26 @@ tray-padding = 2
 modules-left = i3 xwindow 
 modules-right = spotify volume cpu memory battery1 date
 
-[bar/example_left]
+font-0 = "Noto Sans:size=14:style=Regular;1"
+font-1 = unifont:fontformat=truetype:size=14:antialias=false;0
+font-2 = FontAwesome:size=14;0
+
+[bar/workstation]
 inherit = bar/base
-monitor = ${env:MONITOR:HDMI-0}
-modules-left = i3
-modules-center = xwindow 
-modules-right = spotify mpd volume filesystem memory gpu cpu date 
+monitor = ${env:MONITOR:DP-2}
+modules-left = i3 xwindow
+modules-right = spotify mpd volume filesystem cpu gpu memory date 
 tray-position = right
 tray-padding = 2
-;tray-transparent = true
-;tray-background = #0063ff
 
+font-0 = "Noto Sans:size=11:style=Regular;1"
+font-1 = unifont:fontformat=truetype:size=11:antialias=false;0
+font-2 = FontAwesome:size=11;0
 
-[bar/example_right]
-inherit = bar/base
+[bar/workstation2]
+inherit = bar/workstation
 monitor = ${env:MONITOR:DP-4}
-modules-left = i3
+tray-position = false
 
 
 [module/xwindow]
@@ -229,7 +227,7 @@ format = <label> <bar-used>
 label = MEM
 
 bar-used-indicator =
-bar-used-width = 17
+bar-used-width = 20
 bar-used-foreground-0 = ${colors.green}
 bar-used-foreground-1 = ${colors.yellow}
 bar-used-foreground-2 = ${colors.red}
@@ -379,8 +377,7 @@ type=custom/script
 exec = /bin/bash ~/.config/polybar/gpu.sh
 interval = 1
 tail = false
-format =  <label>
-format-underline = #268bd2
+format = GPU <label>
 
 [module/spotify]
 type=custom/script

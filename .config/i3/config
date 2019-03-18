@@ -9,7 +9,8 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 # exec xrandr --auto --output DP-4 --right-of HDMI-0 --primary --dpi 150
-exec --no-startup-id ~/.config/i3/autoxrandr
+exec --no-startup-id ~/.config/i3/xrandr.sh
+
 
 set $mod Mod4
 
