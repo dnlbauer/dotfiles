@@ -31,6 +31,7 @@ wm-restack = i3
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 
+
 [bar/laptop]
 monitor = ${env:MONITOR:eDP-1}
 inherit = bar/base
@@ -44,6 +45,9 @@ font-0 = "Noto Sans:size=14:style=Regular;1"
 font-1 = unifont:fontformat=truetype:size=14:antialias=false;0
 font-2 = FontAwesome:size=14;0
 
+[bar/laptop_station]
+inherit = bar/laptop
+monitor = ${env:MONITOR:HDMI-2}
 [bar/workstation]
 inherit = bar/base
 monitor = ${env:MONITOR:DP-2}
