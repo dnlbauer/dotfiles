@@ -1,4 +1,21 @@
+set fetch_path, /tmp
+set async_builds, on
+set max_threads, 16
+set cache_mode 
+
 set opaque_background, 0
 log_open /tmp/pymol_log.pml
 set cartoon_side_chain_helper, 1
 set cartoon_highlight_color, grey50
+
+set_key F1, as lines, solvent
+set_key F2, hide everything, solvent
+set_key F3, as spheres, inorganic and (n. NA or n. K or n. CL or n. CA or n. XE or n. RN)
+set_key F4, hide everything, inorganic and (n. NA or n. K or n. CL or n. CA or n. XE or n. RN)
+set_key F5, as sticks, organic
+set_key F6, hide everything, organic
+
+set_key F9, set orthoscopic
+set_key F10, set orthoscopic, off
+set_key F11, ray
+set_key F12, ray 1600,1600
