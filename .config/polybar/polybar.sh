@@ -9,5 +9,6 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar -c ~/.config/polybar/config workstation &
 polybar -c ~/.config/polybar/config workstation2 & 
 polybar -c ~/.config/polybar/config laptop &
+polybar -c ~/.config/polybar/config laptop_station &
 
 echo "Bars launched..."
