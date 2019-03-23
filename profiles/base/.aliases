@@ -1,0 +1,9 @@
+# aliases
+if [ -f .cargo/bin/bat ]; then
+    alias cat='bat'
+fi	
+alias clip='xsel --clipboard'
+alias groclean='rm \#*'
+alias sm='snakemake'
+alias ls='ls -lh'
+alias workon='source activate' # enable anaconda environ
