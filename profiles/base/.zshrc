@@ -12,9 +12,9 @@ export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
 
 # source other dotfiles
-source "$HOME/.environment"
+source $HOME/.environment
 if [ -f "$HOME/.environment.local" ]; then
-	source "$HOME/.environment.local"
+	source $HOME/.environment.local
 fi
 
 source ".aliases"

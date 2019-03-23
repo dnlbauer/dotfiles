@@ -25,9 +25,18 @@ else
 	echo "Powerlevel9k already exists."
 fi
 
-# linking base stuff
+# Conda
+if [ ! -d "$HOME/conda" ]; then
+	echo "Installing Conda"
+	wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh
+	bash /tmp/miniconda.sh -b -p ~/conda 
+	rm /tmp/miniconda.sh
+else
+	echo "Conda already installed"
+fi
+
+# linking dotfiles
 $HOME/.dotfiles/dotfiles.sh link base  
 
-# TODO install anaconda
 # TODO install fasd
 # TODO install marker
