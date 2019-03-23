@@ -17,7 +17,7 @@ if [ -f "$HOME/.environment.local" ]; then
 	source $HOME/.environment.local
 fi
 
-source ".aliases"
+source $HOME/.aliases
 
 if [ -z "$GMXRC" ]; then
     GMXRC="/opt/gromacs-2018/bin/GMXRC"
