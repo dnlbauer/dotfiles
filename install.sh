@@ -25,12 +25,13 @@ else
 	echo "Powerlevel9k already exists."
 fi
 
-# Conda
+# Conda and pip
 if [ ! -d "$HOME/conda" ]; then
 	echo "Installing Conda"
 	wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O /tmp/miniconda.sh
 	bash /tmp/miniconda.sh -b -p ~/conda 
 	rm /tmp/miniconda.sh
+	echo "yes" | conda install pip
 else
 	echo "Conda already installed"
 fi
