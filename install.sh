@@ -36,8 +36,13 @@ else
 	echo "Conda already installed"
 fi
 
+# Marker
+if [ ! -d "$HOME/.marker" ]; then
+	echo "Installing Marker"
+	git clone --depth=1 https://github.com/pindexis/marker $HOME/.marker
+	$HOME/.marker/install.py
+fi
+
 # linking dotfiles
 $HOME/.dotfiles/dotfiles.sh link base  
 
-# TODO install fasd
-# TODO install marker
