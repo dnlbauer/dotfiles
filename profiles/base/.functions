@@ -1,0 +1,10 @@
+sm_autocomplete() {
+	# make zsh emulate bash if necessary
+	if [[ -n "$ZSH_VERSION" ]]; then
+    	autoload bashcompinit
+    	bashcompinit
+	fi
+
+	snakemake_options=$(snakemake --snakefile Snakefile --list)
+	complete -W "${snakemake_options}" 'snakemake'	
+}
