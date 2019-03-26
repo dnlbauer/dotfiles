@@ -1,6 +1,6 @@
 # general environment
 bg_color white
-space cmyk
+#space cmyk
 set fetch_path, /tmp
 log_open /tmp/pymol_log.pml
 set retain_order
@@ -49,8 +49,8 @@ set depth_cue, 0
 set ray_opaque_background, false
 set orthoscopic, 0
 set ray_shadow, false 
-set spec_reflect, 0
-set antialias, 0
+#set spec_reflect, 0
+set antialias, 1
 set surface_quality, 1
 set ray_trace_mode, 0
 
