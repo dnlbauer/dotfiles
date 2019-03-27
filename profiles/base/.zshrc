@@ -1,7 +1,13 @@
-# export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-# # [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
 
-source $HOME/.antigenrc
+if [ -z "$GMXRC" ]; then
+    GMXRC="/opt/gromacs-2018/bin/GMXRC.bash"
+fi
+source $GMXRC
+
+# source $HOME/bin/antigen.zsh
+# antigen init $HOME/.antigenrc
 
 # source other dotfiles
 source $HOME/.environment
@@ -21,8 +27,3 @@ eval "$(fasd --init auto)"
 # marker
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
-# gromacs
-if [ -z "$GMXRC" ]; then
-    GMXRC="/opt/gromacs-2018/bin/GMXRC"
-fi
-source $GMXRC
