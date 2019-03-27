@@ -1,23 +1,15 @@
-# Change default zim location
-export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+# # [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
 
-# Start zim
-[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
+source $HOME/.antigenrc
 
 # source other dotfiles
 source $HOME/.environment
 if [ -f "$HOME/.environment.local" ]; then
 	source $HOME/.environment.local
 fi
-
 source $HOME/.aliases
 source $HOME/.functions
-
-if [ -z "$GMXRC" ]; then
-    GMXRC="/opt/gromacs-2018/bin/GMXRC"
-fi
-source $GMXRC
-
 # config specific to this machine
 if [ -f $HOME/.zshrc_local ]; then
     source $HOME/.zshrc_local
@@ -28,3 +20,9 @@ eval "$(fasd --init auto)"
 
 # marker
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+
+# gromacs
+if [ -z "$GMXRC" ]; then
+    GMXRC="/opt/gromacs-2018/bin/GMXRC"
+fi
+source $GMXRC
