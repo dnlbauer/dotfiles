@@ -54,6 +54,11 @@ if [ ! -f "$HOME/bin/fasd" ]; then
 	chmod +x $HOME/bin/fasd
 fi
 
+# vundle
+if [ ! -d "$HOME/.vim/bundle" ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
 # linking dotfiles
 $HOME/.dotfiles/dotfiles.sh link base  
 
