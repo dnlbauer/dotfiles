@@ -1,15 +1,12 @@
 # general environment
-bg_color white
-space cmyk
+bg_color black
+#space cmyk
 set fetch_path, /tmp
 log_open /tmp/pymol_log.pml
 set retain_order
 
-
 # interface
 set overlay, 1
-set internal_gui_control_size, 10
-set display_scale_factor, 2
 
 # performance
 set async_builds, on
@@ -30,27 +27,13 @@ set_key F10, set depth_cue, off
 set_key F11, ray 800,800
 set_key F12, ray 1600,1600
 
-#Extending colors with color-blindness friendly color palette
-#References:
-#http://jfly.iam.u-tokyo.ac.jp/html/color_cb/#pallet
-#https://personal.sron.nl/~pault/colourschemes.pdf
-set_color cb_blue, [51, 34, 136]
-set_color cb_tan, [221, 204, 119]
-set_color cb_lightblue, [136, 204, 238]
-set_color cb_green, [17, 119, 51]
-set_color cb_teal, [68, 170, 153]
-set_color cb_gold, [153, 153, 51]
-set_color cb_salmon, [204, 102, 119]
-set_color cb_red, [136, 34, 85]
-set_color cb_pink, [170, 68, 153]
-
 # raytrace
 set depth_cue, 0
 set ray_opaque_background, false
 set orthoscopic, 0
 set ray_shadow, false 
-set spec_reflect, 0
-set antialias, 0
+#set spec_reflect, 0
+set antialias, 1
 set surface_quality, 1
 set ray_trace_mode, 0
 

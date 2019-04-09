@@ -35,3 +35,4 @@ eval "$(fasd --init auto)"
 
 # marker
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+
