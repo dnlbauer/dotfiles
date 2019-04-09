@@ -1,5 +1,5 @@
 # general environment
-bg_color black
+bg_color white
 #space cmyk
 set fetch_path, /tmp
 log_open /tmp/pymol_log.pml

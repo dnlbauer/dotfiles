@@ -43,6 +43,22 @@ if [ ! -d "$HOME/.marker" ]; then
 	$HOME/.marker/install.py
 fi
 
+# fasd 
+if [ ! -d "$HOME/bin" ]; then
+	mkdir -p $HOME/bin
+fi
+if [ ! -f "$HOME/bin/fasd" ]; then
+	echo "Installing fasd"
+	wget https://raw.githubusercontent.com/clvv/fasd/master/fasd
+	mv fasd $HOME/bin/fasd
+	chmod +x $HOME/bin/fasd
+fi
+
+# vundle
+if [ ! -d "$HOME/.vim/bundle" ]; then
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
+
 # linking dotfiles
 $HOME/.dotfiles/dotfiles.sh link base  
 
