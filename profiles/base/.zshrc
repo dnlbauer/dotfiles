@@ -1,10 +1,9 @@
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
 
-if [ -z "$GMXRC" ]; then
-    GMXRC="/opt/gromacs-2018/bin/GMXRC.bash"
+if [ z "$GMXRC" ]; then
+    source $GMXRC
 fi
-source $GMXRC
 
 # source $HOME/bin/antigen.zsh
 # antigen init $HOME/.antigenrc
