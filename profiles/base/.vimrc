@@ -5,7 +5,8 @@ set laststatus=2
 set t_Co=256
 
 set nocompatible              " be iMproved, required
-set number
+set nonumber
+set relativenumber
 
 
 filetype off                  " required
@@ -18,10 +19,11 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'zchee/deoplete-jedi'
 Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
+Plugin 'klen/python-mode'
+
 Plugin 'hublot/vim-gromacs'
 Plugin 'lervag/vimtex'
 Plugin 'ibab/vim-snakemake'
@@ -31,6 +33,10 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'morhetz/gruvbox'
 let g:vim_markdown_folding_disabled = 1
 
+let g:pymode_python = "python3"
+let g:pymode_virtualenv_path = "conda"
+let g:pymode = 1
+let g:pymode_options = 1
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

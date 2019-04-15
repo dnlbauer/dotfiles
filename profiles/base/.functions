@@ -8,3 +8,11 @@ sm_autocomplete() {
 	snakemake_options=$(snakemake --snakefile Snakefile --list)
 	complete -W "${snakemake_options}" 'snakemake'	
 }
+
+cd() {
+    builtin cd "$@"
+    if [ -f "Snakefile" ]; then
+        sm_autocomplete
+    fi  
+
+}
