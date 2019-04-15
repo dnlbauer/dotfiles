@@ -1,10 +1,6 @@
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
 
-if [ z "$GMXRC" ]; then
-    source $GMXRC
-fi
-
 # source $HOME/bin/antigen.zsh
 # antigen init $HOME/.antigenrc
 
@@ -18,6 +14,10 @@ source $HOME/.functions
 # config specific to this machine
 if [ -f $HOME/.zshrc_local ]; then
     source $HOME/.zshrc_local
+fi
+
+if [ -n "$GMXRC" ]; then
+    source $GMXRC
 fi
 
 # fasd autocompletion
