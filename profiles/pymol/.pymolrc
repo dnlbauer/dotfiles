@@ -5,6 +5,7 @@ set fetch_path, /tmp
 log_open /tmp/pymol_log.pml
 set retain_order
 
+
 # interface
 set overlay, 1
 
@@ -38,9 +39,11 @@ set surface_quality, 1
 set ray_trace_mode, 0
 
 set valence, 0
+set cartoon_gap_cutoff, 0
 set cartoon_side_chain_helper, 1
 set cartoon_discrete_colors, on
 
-alias clean, hide everything, hydrogen
+alias clean, hide everything, hydrogen or n. 1M* or n. 2M*
+alias sf_as_sticks, show_as sticks, resid 479-483; clean
 
 
