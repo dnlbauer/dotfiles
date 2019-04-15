@@ -4,6 +4,7 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
+		"RestructuredText",
 		"Vintage"
 	],
 	"remember_open_files": false,
@@ -14,7 +15,7 @@
 		120
 	],
 	"tab_size": 4,
-	"theme": "gruvbox (Dark) (Hard).sublime-theme",
+	"theme": "gruvbox (Dark) (Medium).sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"viewer": "zathura"
 }
