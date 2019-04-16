@@ -5,9 +5,7 @@ set laststatus=2
 set t_Co=256
 
 set nocompatible              " be iMproved, required
-set nonumber
-set relativenumber
-
+set number
 
 filetype off                  " required
 
