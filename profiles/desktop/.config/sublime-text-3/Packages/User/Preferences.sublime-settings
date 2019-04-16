@@ -1,12 +1,16 @@
 {
+	"color_scheme": "Packages/bioSyntax/bioSyntax.tmTheme",
 	"font_face": "Hack for Powerline Regular",
 	"font_size": 16,
 	"hot_exit": false,
 	"ignored_packages":
 	[
 		"RestructuredText",
-		"Vintage"
+		"Six",
+		"Vintage",
+		"Vintageous"
 	],
+	"neovintageous_build_version": 11100,
 	"remember_open_files": false,
 	"rulers":
 	[
@@ -17,5 +21,7 @@
 	"tab_size": 4,
 	"theme": "gruvbox (Dark) (Medium).sublime-theme",
 	"translate_tabs_to_spaces": true,
-	"viewer": "zathura"
+	"viewer": "zathura",
+	"vintageous_use_ctrl_keys": null,
+	"vintageous_use_super_keys": null
 }

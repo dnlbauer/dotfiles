@@ -23,7 +23,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 "Plugin 'davidhalter/jedi-vim'
 Plugin 'klen/python-mode'
-
+Plugin 'biosyntax/biosyntax-vim'
 Plugin 'hublot/vim-gromacs'
 Plugin 'lervag/vimtex'
 Plugin 'ibab/vim-snakemake'
