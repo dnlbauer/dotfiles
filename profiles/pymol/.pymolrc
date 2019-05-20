@@ -43,7 +43,7 @@ set cartoon_gap_cutoff, 0
 set cartoon_side_chain_helper, 1
 set cartoon_discrete_colors, on
 
-alias clean, hide everything, hydrogen or n. 1M* or n. 2M*
+alias clean, hide everything, hydrogen or n. 1M* or n. 2M* or n. MC*
 alias sf_as_sticks, show_as sticks, resid 479-483; clean
 
 
