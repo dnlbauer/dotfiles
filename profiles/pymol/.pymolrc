@@ -16,34 +16,48 @@ set cache_mode
 set defer_builds_mode, 3
 set hash_max, 500
 
+# raytrace
+set depth_cue, 0
+set ray_opaque_background, false
+set orthoscopic, 0
+#set ray_shadow, false 
+set spec_reflect, 0.25
+set antialias, 1
+set surface_quality, 1
+set ray_trace_mode, 0
+]
+
+
+# hide nonbonded and nbsphreres
+set nonbonded_transparency, 1
+set nb_spheres_size, 0
+
+# stick settings
+set valence, 0
+
+# cartoon
+set cartoon_sampling, 30 # fancier
+set cartoon_gap_cutoff, 1
+set cartoon_side_chain_helper, 1
+set cartoon_discrete_colors, on
+set cartoon_highlight_color, gray
+
+
 # shortcuts
-set_key F1, as lines, solvent
-set_key F2, hide everything, solvent
-set_key F3, as spheres, inorganic and (n. NA or n. K or n. CL or n. CA or n. XE or n. RN)
-set_key F4, hide everything, inorganic and (n. NA or n. K or n. CL or n. CA or n. XE or n. RN)
-set_key F5, as sticks, organic
-set_key F6, hide everything, organic
+set_key F1, toggle sticks, solvent
+set_key F2, toggle sticks, (r. POPC or r. POP) and not hydrogen
+set_key F3, toggle spheres, inorganic and (n. NA or n. K)
+set_key F4, toggle spheres, n. CL
+
+
+
 set_key F9, set depth_cue
 set_key F10, set depth_cue, off
 set_key F11, ray 800,800
 set_key F12, ray 1600,1600
 
-# raytrace
-set depth_cue, 0
-set ray_opaque_background, false
-set orthoscopic, 0
-set ray_shadow, false 
-#set spec_reflect, 0
-set antialias, 1
-set surface_quality, 1
-set ray_trace_mode, 0
 
-set valence, 0
-set cartoon_gap_cutoff, 0
-set cartoon_side_chain_helper, 1
-set cartoon_discrete_colors, on
 
 alias clean, hide everything, hydrogen or n. 1M* or n. 2M* or n. MC*
-alias sf_as_sticks, show_as sticks, resid 479-483; clean
-
+alias sf_as_sticks, show sticks, residue 478-484 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*); hide cartoon, resi 479-483; show sticks, residue 475+468 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*)
 
