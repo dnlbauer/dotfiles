@@ -7,3 +7,9 @@ alias groclean='rm \#*'
 alias sm='snakemake'
 alias ls='ls -lh'
 alias workon='source activate' # enable anaconda environ
+
+# lhr
+alias squeue="ssh lcluster11 squeue"
+alias csum="ssh lcluster11 csum"
+alias csreport="ssh lcluster11 csreport"
+alias scancel="ssh lcluster11 scancel"

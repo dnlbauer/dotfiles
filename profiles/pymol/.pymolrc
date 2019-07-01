@@ -34,7 +34,7 @@ set nb_spheres_size, 0
 set valence, 0
 
 # cartoon
-set cartoon_sampling, 30
+set cartoon_sampling, 30 
 set cartoon_gap_cutoff, 1
 set cartoon_side_chain_helper, 1
 set cartoon_discrete_colors, on
