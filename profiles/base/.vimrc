@@ -32,7 +32,7 @@ Plugin 'morhetz/gruvbox'
 let g:vim_markdown_folding_disabled = 1
 
 let g:pymode_python = "python3"
-let g:pymode_virtualenv_path = "conda"
+let g:pymode_virtualenv_path = "/home/bauer/conda"
 let g:pymode = 1
 let g:pymode_options = 1
 " All of your Plugins must be added before the following line

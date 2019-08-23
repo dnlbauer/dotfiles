@@ -1,6 +1,5 @@
 export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 [[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
-
 # source $HOME/bin/antigen.zsh
 # antigen init $HOME/.antigenrc
 
@@ -25,4 +24,3 @@ eval "$(fasd --init auto)"
 
 # marker
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
-

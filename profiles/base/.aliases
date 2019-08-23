@@ -5,8 +5,9 @@ fi
 alias clip='xsel --clipboard'
 alias groclean='rm \#*'
 alias sm='snakemake'
-alias ls='ls -lh'
+alias ls='ls --color=auto -lh'
 alias workon='source activate' # enable anaconda environ
+alias cwl="cwl-runner"
 
 # lhr
 alias squeue="ssh lcluster11 squeue"
