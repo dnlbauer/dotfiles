@@ -43,13 +43,14 @@ set cartoon_highlight_color, gray
 # spheres
 set sphere_scale, 0.5
 
+# custom colors
+set_color sodium, [0.0, 0.5, 1.0]
+
 # shortcuts
 set_key F1, toggle sticks, solvent
 set_key F2, toggle sticks, (r. POPC or r. POP) and not hydrogen
 set_key F3, toggle spheres, inorganic and (n. NA or n. K)
 set_key F4, toggle spheres, n. CL
-
-
 
 set_key F9, set depth_cue
 set_key F10, set depth_cue, off
@@ -60,4 +61,4 @@ set_key F12, ray 1600,1600
 
 alias clean, hide everything, hydrogen or n. 1M* or n. 2M* or n. MC*
 alias sf_as_sticks, show sticks, residue 478-484 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*); hide cartoon, resi 479-483; show sticks, residue 475+468 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*)
-
+alias dockfix, as sticks, bonded and not polymer
