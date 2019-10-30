@@ -39,7 +39,7 @@ bindsym $mod+Shift+q kill
 
 # rofi
 bindsym $mod+Tab exec rofi -show window
-bindsym $mod+d exec "rofi -show combi -combi-modi window,drun"
+bindsym $mod+d exec "rofi -show combi -combi-modi window,drun,ssh"
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
