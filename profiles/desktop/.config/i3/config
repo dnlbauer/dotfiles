@@ -234,7 +234,8 @@ bindsym XF86HomePage exec "i3lock -i ~/lockscreens/`ls ~/lockscreens | shuf -n 1
 bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/change_monitor.sh	
 
 # reload workspace layouts
-exec --no-startup-id "i3-msg 'workspace 9; append_layout /home/bauer/.i3/workspace-9.json'"
+#exec --no-startup-id "i3-msg 'workspace 9; append_layout /home/bauer/.i3/workspace-9.json'"
 
 exec --no-startup-id nm-applet
 exec --no-startup-id xfsettingsd
+exec --no-startup-id /usr/bin/blueman-applet

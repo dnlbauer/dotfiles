@@ -25,8 +25,6 @@ set spec_reflect, 0.25
 set antialias, 1
 set surface_quality, 1
 set ray_trace_mode, 0
-]
-
 
 # hide nonbonded and nbsphreres
 set nonbonded_transparency, 1
@@ -42,6 +40,8 @@ set cartoon_side_chain_helper, 1
 set cartoon_discrete_colors, on
 set cartoon_highlight_color, gray
 
+# spheres
+set sphere_scale, 0.5
 
 # shortcuts
 set_key F1, toggle sticks, solvent

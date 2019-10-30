@@ -48,12 +48,13 @@ font-2 = FontAwesome:size=14;0
 [bar/laptop_station]
 inherit = bar/laptop
 monitor = ${env:MONITOR:HDMI-2}
+
 [bar/workstation]
 inherit = bar/base
 monitor = ${env:MONITOR:DP-2}
 modules-left = i3 xwindow
 modules-right = spotify mpd volume filesystem cpu gpu memory date 
-tray-position = right
+tray-position = false
 tray-padding = 2
 
 font-0 = "Noto Sans:size=11:style=Regular;1"
@@ -63,7 +64,7 @@ font-2 = FontAwesome:size=11;0
 [bar/workstation2]
 inherit = bar/workstation
 monitor = ${env:MONITOR:DP-4}
-tray-position = false
+tray-position = right
 
 
 [module/xwindow]
