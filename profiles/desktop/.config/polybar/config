@@ -53,7 +53,7 @@ monitor = ${env:MONITOR:HDMI-2}
 inherit = bar/base
 monitor = ${env:MONITOR:DP-2}
 modules-left = i3 xwindow
-modules-right = spotify mpd volume filesystem cpu gpu memory date 
+modules-right = spotify previous playpause next mpd volume filesystem cpu gpu memory date xkeyboard 
 tray-position = false
 tray-padding = 2
 
@@ -93,8 +93,8 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-mount-1 = /scratch
-mount-2 = /scratch2
+mount-1 = /data
+mount-2 = /backup
 
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
@@ -420,3 +420,35 @@ ramp-capacity-4 = 
 ramp-capacity-4-foreground = ${colors.green}
 
 animation-discharging-0 = 
+
+[module/previous]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 1
+exec = echo ""
+exec-if = "pgrep spotify"
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+[module/playpause]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 1
+exec = echo "/"
+exec-if = "pgrep spotify"
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+
+[module/next]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 1
+exec = echo ""
+exec-if = "pgrep spotify"
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
