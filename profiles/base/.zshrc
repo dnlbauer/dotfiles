@@ -24,3 +24,20 @@ eval "$(fasd --init auto)"
 
 # marker
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/bauer/conda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/bauer/conda/etc/profile.d/conda.sh" ]; then
+        . "/home/bauer/conda/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/bauer/conda/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
