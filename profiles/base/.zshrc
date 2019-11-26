@@ -9,7 +9,6 @@ if [ -f "$HOME/.environment.local" ]; then
 	source $HOME/.environment.local
 fi
 source $HOME/.aliases
-source $HOME/.functions
 # config specific to this machine
 if [ -f $HOME/.zshrc_local ]; then
     source $HOME/.zshrc_local
@@ -41,3 +40,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# snakemake autocomplete
+if hash snakemake 2>/dev/null; then
+    compdef _gnu_generic snakemake
+fi
