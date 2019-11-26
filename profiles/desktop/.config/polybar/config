@@ -51,9 +51,9 @@ monitor = ${env:MONITOR:HDMI-2}
 
 [bar/workstation]
 inherit = bar/base
-monitor = ${env:MONITOR:DP-2}
+monitor = ${env:MONITOR:DP-4}
 modules-left = i3 xwindow
-modules-right = spotify previous playpause next mpd volume filesystem cpu gpu memory date xkeyboard 
+modules-right = spotify previous playpause next mpd pulseaudio filesystem cpu gpu memory date xkeyboard 
 tray-position = false
 tray-padding = 2
 
@@ -63,7 +63,7 @@ font-2 = FontAwesome:size=11;0
 
 [bar/workstation2]
 inherit = bar/workstation
-monitor = ${env:MONITOR:DP-4}
+monitor = ${env:MONITOR:DP-2}
 tray-position = right
 
 
@@ -292,6 +292,33 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 label = %time% %date%
 format = <label>
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume> <bar-volume>
+label-volume = 
+label-volume-foreground = ${root.foreground}
+
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 20
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = ▐
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
 
 [module/volume]
 type = internal/alsa
