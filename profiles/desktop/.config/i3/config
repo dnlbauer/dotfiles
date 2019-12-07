@@ -186,6 +186,7 @@ workspace $workspace8 output DP-0
 workspace $workspace9 output DP-0 
 
 for_window [window_role="pop-up"] floating enable
+for_window [class="Chromium" window_role="pop-up"] floating disable
 for_window [class="Tk"] floating enable
 for_window [title="PyMOL Viewer"] floating enable
 for_window [class="Toplevel"] floating enable

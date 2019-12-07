@@ -3,3 +3,5 @@
 # Please adapt and uncomment the following lines:
 	name = Daniel Bauer
 	email = bauer@cbs.tu-darmstadt.de
+[pack]
+	threads = 8
