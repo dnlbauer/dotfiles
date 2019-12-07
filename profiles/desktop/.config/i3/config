@@ -38,8 +38,7 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec dmenu_run
 
 # rofi
-bindsym $mod+Tab exec rofi -show window
-bindsym $mod+d exec "rofi -show combi -combi-modi window,drun,ssh"
+bindsym $mod+d exec "rofi -show combi"
 
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -237,5 +236,5 @@ bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/change_monitor.sh
 #exec --no-startup-id "i3-msg 'workspace 9; append_layout /home/bauer/.i3/workspace-9.json'"
 
 exec --no-startup-id nm-applet
-exec --no-startup-id xfsettingsd
+exec --no-startup-id xfsettingsd --sm-client-disable &
 exec --no-startup-id /usr/bin/blueman-applet
