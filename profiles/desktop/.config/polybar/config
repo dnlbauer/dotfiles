@@ -39,7 +39,7 @@ tray-position = right
 fixed-center = true
 tray-padding = 2
 modules-left = i3 xwindow 
-modules-right = spotify volume cpu memory battery1 date
+modules-right = spotify previous playpause next mpd pulseaudio cpu memory battery1 date
 
 font-0 = "Noto Sans:size=14:style=Regular;1"
 font-1 = unifont:fontformat=truetype:size=14:antialias=false;0
