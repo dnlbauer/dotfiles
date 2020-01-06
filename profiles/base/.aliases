@@ -14,3 +14,6 @@ alias squeue="ssh lcluster11 squeue"
 alias csum="ssh lcluster11 csum"
 alias csreport="ssh lcluster11 csreport"
 alias scancel="ssh lcluster11 scancel"
+
+# faster sshfs
+alias sshfs="sshfs -o Ciphers=arcfour,Compression=no,auto_cache"

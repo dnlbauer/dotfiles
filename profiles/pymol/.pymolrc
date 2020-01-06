@@ -34,11 +34,12 @@ set nb_spheres_size, 0
 set valence, 0
 
 # cartoon
-set cartoon_sampling, 30 
 set cartoon_gap_cutoff, 1
 set cartoon_side_chain_helper, 1
 set cartoon_discrete_colors, on
-set cartoon_highlight_color, gray
+#set cartoon_highlight_color, gray
+set cartoon_oval_length, 0.8
+
 
 # spheres
 set sphere_scale, 0.5
