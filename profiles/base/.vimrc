@@ -3,7 +3,6 @@ set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/
 set laststatus=2  
 " Use 256 colours (Use this setting only if your terminal supports 256 colours) 
 set t_Co=256
-
 set nocompatible              " be iMproved, required
 set number
 
@@ -19,8 +18,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
+Plugin 'valloric/youcompleteme'
 "Plugin 'davidhalter/jedi-vim'
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 Plugin 'biosyntax/biosyntax-vim'
 Plugin 'hublot/vim-gromacs'
 Plugin 'lervag/vimtex'
@@ -50,9 +50,13 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
+
+let g:ycm_autoclose_preview_window_after_completion=1
+
 syntax on
 set softtabstop=4
 
+set colorcolumn=80,100,120
 
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'hard'
