@@ -1,0 +1,17 @@
+
+include-file = ~/.config/polybar/config.d/colors
+include-file = ~/.config/polybar/config.d/settings
+include-file = ~/.config/polybar/config.d/modules
+include-file = ~/.config/polybar/config.d/base_bar
+
+[bar/laptop]
+inherit = bar/base
+monitor = ${env:MONITOR:eDP-1}
+
+modules-left = i3 xwindow 
+modules-right = previous playpause next spotify volume cpu memory battery1 date
+
+
+[bar/laptop_extern]
+inherit = bar/laptop
+monitor = ${env:MONITOR:HDMI-2}
