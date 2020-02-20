@@ -17,9 +17,11 @@ link_profile() {
 	fi
 
 	cd $profile_dir
+    OIFS="$IFS"
+    IFS=$'\n'
 	# Find all files to link
-	for file in `find . -type f | cut -c 3- | grep -v "^$"`; do
-		dir=$(dirname "${file}")
+    for file in `find . -type f | cut -c 3- | grep -v "^$"`; do
+   		dir=$(dirname "${file}")
 		src=`pwd`/$file
 		dst_dir=$HOME/$dir
 		dst=$HOME/$file

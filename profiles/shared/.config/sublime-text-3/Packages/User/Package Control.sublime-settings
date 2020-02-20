@@ -5,8 +5,23 @@
 	],
 	"installed_packages":
 	[
-		"Anaconda",
-		"Gruvbox Dark",
+		"bioSyntax",
+		"Color Highlight",
+		"ColorPicker",
+		"CWL Syntax Highlighting",
+		"gruvbox",
+		"Hermes",
+		"Incomprehensible Ex",
+		"LaTeX Snippets",
 		"LaTeXTools",
+		"LSP",
+		"MarkdownPreview",
+		"NeoVintageous",
+		"Package Control",
+		"RestructuredText Improved",
+		"rsub",
+		"Rust Enhanced",
+		"SideBarEnhancements",
+		"TabNine"
 	]
 }

@@ -1,5 +1,8 @@
 {
-	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).sublime-color-scheme",
+	"auto_complete": true,
+    "color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).sublime-color-scheme",
+	"detect_indentation": false,
+	"dictionary": "Packages/Language - English/en_US.dic",
 	"font_face": "Hack for Powerline Regular",
 	"font_size": 12,
 	"hot_exit": false,
@@ -8,6 +11,7 @@
 		"RestructuredText",
 		"Rust",
 		"Six",
+		"TabNine",
 		"Vintage",
 		"Vintageous"
 	],
@@ -19,10 +23,14 @@
 		100,
 		120
 	],
+    "line_numbers": true,
+	"spell_check": true,
 	"tab_size": 4,
 	"theme": "gruvbox.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"viewer": "zathura",
-	"vintageous_use_ctrl_keys": null,
-	"vintageous_use_super_keys": null
+	"vintage_start_in_command_mode": true,
+	"vintageous_use_ctrl_keys": false,
+	"vintageous_use_super_keys": false,
+	"wrap_width": 80
 }

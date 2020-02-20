@@ -1,0 +1,5 @@
+- base: base config files. includes zshrc, vim, fonts, etc
+- shared: configs shared between several computers 
+- workplace: configs related to workplace pc 
+- laptop: config related to laptop
+- pymol: Pymol plugins and config files
