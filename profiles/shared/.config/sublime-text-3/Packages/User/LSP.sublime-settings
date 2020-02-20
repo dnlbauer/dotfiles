@@ -3,7 +3,12 @@
 	{
 		"pyls":
 		{
-			"enabled": true
+			"command":
+			[
+				"~/conda/bin/pyls"
+			],
+			"enabled": true,
+            
 		},
 		"rls":
 		{
