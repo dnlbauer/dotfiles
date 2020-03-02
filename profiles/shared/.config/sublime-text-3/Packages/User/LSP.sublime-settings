@@ -7,8 +7,7 @@
 			[
 				"~/conda/bin/pyls"
 			],
-			"enabled": true,
-            
+			"enabled": false
 		},
 		"rls":
 		{
