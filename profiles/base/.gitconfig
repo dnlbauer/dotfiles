@@ -2,8 +2,10 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = Daniel Bauer
-	email = bauer@cbs.tu-darmstadt.de
 [pack]
 	threads = 8
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+[alias]
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	cm = !git add -A && git commit -m 
