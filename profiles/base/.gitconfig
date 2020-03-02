@@ -5,3 +5,5 @@
 	email = bauer@cbs.tu-darmstadt.de
 [pack]
 	threads = 8
+[merge]
+	tool = kdiff3
