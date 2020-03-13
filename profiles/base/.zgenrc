@@ -1,0 +1,45 @@
+#!/usr/bin/zsh
+
+export TERM="xterm-256color"
+
+zmodules=(ssh directory environment git history input utility custom \
+          syntax-highlighting history-substring-search prompt completion fasd autosuggestions)
+
+
+DEFAULT_USER=bauer
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context  dir vcs anaconda)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs status time)
+
+# Anaconda
+POWERLEVEL9K_ANACONDA_RIGHT_DELIMITER='>'
+POWERLEVEL9K_ANACONDA_LEFT_DELIMITER='<'
+POWERLEVEL9K_ANACONDA_BACKGROUND='24'
+POWERLEVEL9K_ANACONDA_FOREGROUND='111'
+
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+source "${HOME}/.zgen/zgen.zsh"
+if ! zgen saved; then
+    echo "generating zgen save"
+    zgen oh-my-zsh
+
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/command-not-found
+    zgen oh-my-zsh plugins/git
+    zgen oh-my-zsh plugins/debian
+
+    zgen oh-my-zsh plugins/tmux
+    zgen oh-my-zsh plugins/vundle
+    zgen oh-my-zsh plugins/ssh-agent
+    zgen oh-my-zsh plugins/copydir
+
+    zgen load zsh-users/zsh-syntax-highlighting.git
+    zgen load zsh-users/zsh-history-substring-search.git
+    zgen load tarruda/zsh-autosuggestions.git
+
+    zgen load bhilburn/powerlevel9k powerlevel9k
+    zgen save
+fi
+
+
