@@ -16,4 +16,5 @@ alias csreport="ssh lcluster11 csreport"
 alias scancel="ssh lcluster11 scancel"
 
 # faster sshfs
-alias sshfs="sshfs -o Ciphers=arcfour,Compression=no,auto_cache"
+#alias sshfs="sshfs -o Ciphers=arcfour,Compression=no,auto_cache"
+alias sshfs="sshfs -o Compression=no,auto_cache"

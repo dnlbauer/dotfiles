@@ -4,6 +4,8 @@
 	name = Daniel Bauer
 [pack]
 	threads = 8
+[merge]
+	tool = kdiff3
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
