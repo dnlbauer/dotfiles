@@ -1,8 +1,8 @@
-export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
-# source $HOME/bin/antigen.zsh
-# antigen init $HOME/.antigenrc
-
+#export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+#[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
+#source $HOME/bin/antigen.zsh
+#antigen init $HOME/.antigenrc
+source "${HOME}/.zgenrc"
 
 # source other dotfiles
 source $HOME/.environment
@@ -42,6 +42,6 @@ eval "$(fasd --init auto)"
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
 # snakemake autocomplete
-if hash snakemake 2>/dev/null; then
-    compdef _gnu_generic snakemake
-fi
+#if hash snakemake 2>/dev/null; then
+#    compdef _gnu_generic snakemake
+#fi

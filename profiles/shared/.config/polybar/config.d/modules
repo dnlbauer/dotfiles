@@ -333,7 +333,7 @@ format=GPU <label>
 
 [module/spotify]
 type=custom/script
-exec=python3 ~/.config/polybar/spotify.py
+exec=python3 ~/.config/polybar/spotify.py "{artist} - {title}" 
 interval=1
 tail=false
 format= <label>
