@@ -123,6 +123,7 @@ bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -134,6 +135,7 @@ bindsym $mod+Shift+6 move container to workspace $workspace6
 bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -181,9 +183,26 @@ new_window 1pixel
 
 exec_always --no-startup-id ~/.config/polybar/polybar.sh
 
+
+# "special" workspaces
+# workspace7 => zotero
+# worksapce8 => chat
+# workspace9 => emailing
+# workspace0 => music
 workspace $workspace7 output DP-0 
+assign [class="Zotero"] → $workspace7
+assign [class="Mendeley"] → $workspace7
+
 workspace $workspace8 output DP-0 
+assign [class="Skype" title="Skype"] → $workspace8
+assign [class="Mattermost" instance="mattermost"] → $workspace8
+
 workspace $workspace9 output DP-0 
+assign [class="thunderbird"] → $workspace9
+
+workspace $workspace10 output DP-0 
+for_window [class="Spotify"] move to workspace $workspace10
+assign [class="Spotify"] → $workspace10
 
 for_window [window_role="pop-up"] floating enable
 for_window [class="Chromium" window_role="pop-up"] floating disable
@@ -193,24 +212,16 @@ for_window [class="Toplevel"] floating enable
 for_window [title="VMD*"] floating enable
 for_window [title="Area per Lipid*"] floating enable
 for_window [title="MEMBPLUGIN"] floating enable
-for_window [title="Figure*"] floating enable
+#for_window [title="Figure*"] floating enable
 for_window [window_role="conversation" class="Pidgin"] floating enable
-for_window [class="Spotify"] move to workspace $workspace8
-assign [class="Thunderbird"] → $workspace9
-assign [class="Mendeley"] → $workspace7
-#assign [class="Spotify"] → $workspace8
-assign [title="Buddy List"] → $workspace9
 exec --no-startup-id thunderbird
-#exec --no-startup-id mendeleydesktop
-#exec --no-startup-id spotify
-#exec --no-startup-id pidgin
 
 
 
 exec feh --bg-scale ~/wallpaper.jpg
 #exec volumeicon
 exec thunar --daemon
-exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/.lockscreen/`ls /home/bauer/lockscreens | shuf -n 1` -t -f'
+#exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/.lockscreen/`ls /home/bauer/lockscreens | shuf -n 1` -t -f'
 
 # Pulse Audio controls
 bindsym --release XF86AudioLowerVolume exec --no-startup-id amixer  sset Master 5%- #decrease sound volume
@@ -236,6 +247,9 @@ bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/change_monitor.sh
 # reload workspace layouts
 #exec --no-startup-id "i3-msg 'workspace 9; append_layout /home/bauer/.i3/workspace-9.json'"
 
+exec --no-startup-id skypeforlinux
+exec --no-startup-id mattermost-desktop
+exec --no-startup-id nextcloud 
 exec --no-startup-id nm-applet
 exec --no-startup-id xfsettingsd --sm-client-disable &
 exec --no-startup-id /usr/bin/blueman-applet

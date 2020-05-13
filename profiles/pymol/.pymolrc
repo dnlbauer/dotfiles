@@ -61,5 +61,8 @@ set_key F12, ray 1600,1600
 
 
 alias clean, hide everything, hydrogen or n. 1M* or n. 2M* or n. MC*
-alias sf_as_sticks, show sticks, residue 478-484 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*); hide cartoon, resi 479-483; show sticks, residue 475+468 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*)
+alias sf_as_sticks_HCN4, show sticks, residue 478-484 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*); hide cartoon, resi 479-483; show sticks, residue 475+468 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*)
+
+alias sf_as_sticks_HCN1, show sticks, residue 357-362 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*); hide cartoon, resi 358-361
+
 alias dockfix, as sticks, bonded and not polymer

@@ -29,6 +29,9 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'morhetz/gruvbox'
+Plugin 'jpalardy/vim-slime'
+let g:slime_target = "x11"
+
 let g:vim_markdown_folding_disabled = 1
 
 let g:pymode_python = "python3"
