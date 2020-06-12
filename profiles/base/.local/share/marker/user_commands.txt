@@ -1,3 +1,5 @@
 cmake .. -DGMX_BUILD_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON -DGMX_GPU=ON -DCMAKE_INSTALL_PREFIX=/opt/gromacs-2019.1/ -DCMAKE_C_COMPILER=/usr/bin/gcc-4.9 -DCMAKE_CXX_COMPILER=/usr/bin/g++-4.9##gmx_compile
 git clone git@git.compbiol.bio.tu-darmstadt.de:Daniel/md-template.git sim##md-template
 git clone git@git.compbiol.bio.tu-darmstadt.de:Daniel/build_system.git {{folder}} && cd {{folder}}##build_system
+cookiecutter git@git.compbiol.bio.tu-darmstadt.de:Daniel/cookiecutter-md-template.git##cookiecutter-md-template
+cookiecutter git@git.compbiol.bio.tu-darmstadt.de:Daniel/cookiecutter-mpt.git##cookiecutter MPT
