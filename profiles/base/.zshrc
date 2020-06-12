@@ -1,8 +1,8 @@
-export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
-[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
-# source $HOME/bin/antigen.zsh
-# antigen init $HOME/.antigenrc
-
+#export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+#[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh 
+#source $HOME/bin/antigen.zsh
+#antigen init $HOME/.antigenrc
+source "${HOME}/.zgenrc"
 
 # source other dotfiles
 source $HOME/.environment
@@ -19,7 +19,7 @@ else
     if [ -f "/home/bauer/conda/etc/profile.d/conda.sh" ]; then
         . "/home/bauer/conda/etc/profile.d/conda.sh"
     else
-        export PATH="$PATH:/home/bauer/conda/bin"
+        export PATH="/home/bauer/conda/bin:$PATH"
     fi
 fi
 unset __conda_setup
@@ -42,6 +42,6 @@ eval "$(fasd --init auto)"
 [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
 
 # snakemake autocomplete
-if hash snakemake 2>/dev/null; then
-    compdef _gnu_generic snakemake
-fi
+#if hash snakemake 2>/dev/null; then
+#    compdef _gnu_generic snakemake
+#fi

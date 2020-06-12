@@ -30,6 +30,9 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'morhetz/gruvbox'
 Plugin 'preservim/nerdcommenter'
+Plugin 'jpalardy/vim-slime'
+let g:slime_target = "x11"
+
 let g:vim_markdown_folding_disabled = 1
 
 let g:pymode_python = "python3"

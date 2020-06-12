@@ -9,12 +9,14 @@
 		"Color Highlight",
 		"ColorPicker",
 		"CWL Syntax Highlighting",
+		"Fortran",
 		"gruvbox",
 		"Helium",
 		"Incomprehensible Ex",
 		"LaTeX Snippets",
 		"LaTeXTools",
 		"LSP",
+		"MarkdownLivePreview",
 		"MarkdownPreview",
 		"NeoVintageous",
 		"Package Control",
@@ -23,6 +25,7 @@
 		"Rust Enhanced",
 		"SideBarEnhancements",
 		"TabNine",
+		"Thesaurus",
 		"WordCount"
 	]
 }
