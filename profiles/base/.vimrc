@@ -29,6 +29,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'morhetz/gruvbox'
+Plugin 'preservim/nerdcommenter'
 let g:vim_markdown_folding_disabled = 1
 
 let g:pymode_python = "python3"
@@ -61,3 +62,6 @@ set colorcolumn=80,100,120
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
+
+" nerdcommenter
+filetype plugin on
