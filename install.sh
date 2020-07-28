@@ -1,18 +1,17 @@
 #!/bin/bash
 
 # Make ZSH the default shell environment
-if [ `cat /etc/passwd | grep $USER | awk -F ':' '{print $7}'` != "/bin/zsh" ]; then
+if [ `cat /etc/passwd | grep $USER | awk -F ':' '{print $7}'` != "/usr/bin/zsh" ]; then
 	echo "Changing shell to zsh"
 	chsh -s $(which zsh)
 fi
 
-# ZIM Installation
-if [ ! -d "$HOME/.zim" ]; then
-	echo "Installing ZIM"
-	git clone --recursive --depth=1 https://github.com/zimfw/zimfw.git \
-		${ZDOTDIR:-${HOME}}/.zim
+# zgen Installation
+if [ ! -d "$HOME/.zgen" ]; then
+	echo "Installing zgen"
+	git clone --depth=1 https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
 else
-	echo "ZIM already exists."
+	echo "zgen already exists."
 fi
 
 # Powerlevel9k Theme
