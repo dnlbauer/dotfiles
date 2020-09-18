@@ -9,6 +9,12 @@ alias ls='ls --color=auto -lh'
 alias workon='source activate' # enable anaconda environ
 alias cwl="cwl-runner"
 
+function gitignore() {
+    for i in "$@"; do
+        echo $i >> .gitignore
+    done
+}
+
 # lhr
 alias squeue="ssh lcluster11 squeue"
 alias csum="ssh lcluster11 csum"

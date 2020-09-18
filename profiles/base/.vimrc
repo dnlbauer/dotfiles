@@ -29,6 +29,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'morhetz/gruvbox'
+Plugin 'preservim/nerdcommenter'
 Plugin 'jpalardy/vim-slime'
 let g:slime_target = "x11"
 
@@ -64,3 +65,6 @@ set colorcolumn=80,100,120
 colorscheme gruvbox
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
+
+" nerdcommenter
+filetype plugin on
