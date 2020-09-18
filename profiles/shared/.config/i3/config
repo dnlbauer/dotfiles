@@ -218,7 +218,7 @@ exec --no-startup-id thunderbird
 
 
 
-exec feh --bg-scale ~/wallpaper.jpg
+exec feh --bg-fill /home/bauer/artistic/artistici2.png
 #exec volumeicon
 exec thunar --daemon
 #exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/.lockscreen/`ls /home/bauer/lockscreens | shuf -n 1` -t -f'

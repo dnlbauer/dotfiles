@@ -6,6 +6,7 @@
 	"installed_packages":
 	[
 		"bioSyntax",
+		"Color Convert",
 		"Color Highlight",
 		"ColorPicker",
 		"CWL Syntax Highlighting",
@@ -19,7 +20,11 @@
 		"MarkdownLivePreview",
 		"MarkdownPreview",
 		"NeoVintageous",
+		"Ninja",
 		"Package Control",
+		"PackageResourceViewer",
+		"Pymol Language",
+		"RemoteSubl",
 		"RestructuredText Improved",
 		"rsub",
 		"Rust Enhanced",

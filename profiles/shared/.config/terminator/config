@@ -2,6 +2,20 @@
   enabled_plugins = InactivityWatch, ActivityWatch, TerminalShot, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   suppress_multiple_term_dialog = True
 [keybindings]
+  page_up = None
+  page_down = None
+[profiles]
+  [[default]]
+    allow_bold = False
+    cursor_color = "#aaaaaa"
+    font = Hack 14
+    show_titlebar = False
+    scrollback_lines = 5000
+    scrollback_infinite = True
+    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+    use_system_font = False
+    copy_on_selection = True
+    rewrap_on_resize = False
 [layouts]
   [[default]]
     [[[child1]]]
@@ -11,15 +25,3 @@
       parent = ""
       type = Window
 [plugins]
-[profiles]
-  [[default]]
-    allow_bold = False
-    copy_on_selection = True
-    cursor_color = "#aaaaaa"
-    font = Hack 14
-    palette = "#282828:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
-    rewrap_on_resize = False
-    scrollback_infinite = True
-    scrollback_lines = 5000
-    show_titlebar = False
-    use_system_font = False

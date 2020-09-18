@@ -5,6 +5,7 @@ set fetch_path, /tmp
 log_open /tmp/pymol_log.pml
 set retain_order
 
+load ~/.pymol/chimera_colors.pml
 
 # interface
 set overlay, 1
@@ -47,6 +48,10 @@ set sphere_scale, 0.5
 # custom colors
 set_color sodium, [0.0, 0.5, 1.0]
 
+# bigger dashes
+set dash_gap, .35
+set dash_length, .3
+
 # shortcuts
 set_key F1, toggle sticks, solvent
 set_key F2, toggle sticks, (r. POPC or r. POP) and not hydrogen
@@ -61,8 +66,9 @@ set_key F12, ray 1600,1600
 
 
 alias clean, hide everything, hydrogen or n. 1M* or n. 2M* or n. MC*
-alias sf_as_sticks_HCN4, show sticks, residue 478-484 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*); hide cartoon, resi 479-483; show sticks, residue 475+468 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*)
+alias sf_as_sticks_HCN4, show sticks, residue 478-484 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*); hide cartoon, resi 479-483;
+# show sticks, residue 475+468 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*)
 
 alias sf_as_sticks_HCN1, show sticks, residue 357-362 and (not hydrogen or (hydrogen and neighbor (elem O+N+S))) and not (n. 1M* or n. 2M* or n. MC*); hide cartoon, resi 358-361
-
+alias ionwatch, hide everything; show cartoon; show spheres, n. NA or n. K; sf_as_sticks_HCN4; hide everything, ID 1-1899; hide everything, ID 3799-5695 
 alias dockfix, as sticks, bonded and not polymer
