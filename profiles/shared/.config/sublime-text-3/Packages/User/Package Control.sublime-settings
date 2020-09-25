@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"Anaconda",
 		"bioSyntax",
 		"Color Convert",
 		"Color Highlight",
@@ -14,6 +15,7 @@
 		"gruvbox",
 		"Helium",
 		"Incomprehensible Ex",
+		"INI",
 		"LaTeX Snippets",
 		"LaTeXTools",
 		"LSP",

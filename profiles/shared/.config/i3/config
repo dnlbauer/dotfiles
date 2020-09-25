@@ -71,8 +71,8 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # move workspace left/right
-bindsym $mod+Shift+greater move workspace to output left
-bindsym $mod+Shift+less move workspace to output right
+bindsym $mod+Shift+greater move workspace to output right
+bindsym $mod+Shift+less move workspace to output left
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -173,8 +173,8 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
-#	position top
-#       status_command i3blocks -c ~/.i3/i3blocks.conf
+	#position top
+    #   status_command  2> /tmp/i3blocks.err  i3blocks -c ~/.config/i3/i3blocks.conf | tee /tmp/i3blocks.out
 #}
 
 
@@ -189,19 +189,19 @@ exec_always --no-startup-id ~/.config/polybar/polybar.sh
 # worksapce8 => chat
 # workspace9 => emailing
 # workspace0 => music
-workspace $workspace7 output DP-0 
+workspace $workspace7 output eDP-1 
 assign [class="Zotero"] → $workspace7
 assign [class="Mendeley"] → $workspace7
 
-workspace $workspace8 output DP-0 
+workspace $workspace8 output eDP-1
 assign [class="Skype" title="Skype"] → $workspace8
 assign [class="Mattermost" instance="mattermost"] → $workspace8
+assign [class="Rambox" instance="rambox"] → $workspace8
 
-workspace $workspace9 output DP-0 
+workspace $workspace9 output eDP-1 
 assign [class="thunderbird"] → $workspace9
 
-workspace $workspace10 output DP-0 
-for_window [class="Spotify"] move to workspace $workspace10
+workspace $workspace10 output eDP-1 
 assign [class="Spotify"] → $workspace10
 
 for_window [window_role="pop-up"] floating enable
@@ -210,18 +210,8 @@ for_window [class="Tk"] floating enable
 for_window [title="PyMOL Viewer"] floating enable
 for_window [class="Toplevel"] floating enable
 for_window [title="VMD*"] floating enable
-for_window [title="Area per Lipid*"] floating enable
-for_window [title="MEMBPLUGIN"] floating enable
-#for_window [title="Figure*"] floating enable
+for_window [title="Figure*" instance="matplotlib"] floating enable
 for_window [window_role="conversation" class="Pidgin"] floating enable
-exec --no-startup-id thunderbird
-
-
-
-exec feh --bg-fill /home/bauer/artistic/artistici2.png
-#exec volumeicon
-exec thunar --daemon
-#exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/.lockscreen/`ls /home/bauer/lockscreens | shuf -n 1` -t -f'
 
 # Pulse Audio controls
 bindsym --release XF86AudioLowerVolume exec --no-startup-id amixer  sset Master 5%- #decrease sound volume
@@ -246,10 +236,12 @@ bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/change_monitor.sh
 
 # reload workspace layouts
 #exec --no-startup-id "i3-msg 'workspace 9; append_layout /home/bauer/.i3/workspace-9.json'"
-
-exec --no-startup-id skypeforlinux
-exec --no-startup-id mattermost-desktop
-exec --no-startup-id nextcloud 
-exec --no-startup-id nm-applet
-exec --no-startup-id xfsettingsd --sm-client-disable &
-exec --no-startup-id /usr/bin/blueman-applet
+#exec feh --bg-fill /home/bauer/artistic/artistici2.png
+#exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/.lockscreen/`ls /home/bauer/lockscreens | shuf -n 1` -t -f'
+#exec --no-startup-id thunderbird
+#exec --no-startup-id skypeforlinux
+#exec --no-startup-id mattermost-desktop
+#exec --no-startup-id nextcloud 
+#exec --no-startup-id nm-applet
+#exec --no-startup-id xfsettingsd --sm-client-disable &
+#exec --no-startup-id /usr/bin/blueman-applet

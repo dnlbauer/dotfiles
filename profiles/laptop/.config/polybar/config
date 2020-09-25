@@ -6,12 +6,19 @@ include-file = ~/.config/polybar/config.d/base_bar
 
 [bar/laptop]
 inherit = bar/base
-monitor = ${env:MONITOR:eDP-1}
+monitor = ${env:MONITOR:}
 
 modules-left = i3 xwindow 
 modules-right = previous playpause next spotify pulseaudio cpu memory battery1 date
 
+tray-position = right
+tray-padding = 2
 
-[bar/laptop_extern]
-inherit = bar/laptop
-monitor = ${env:MONITOR:HDMI-2}
+[bar/laptop_secondary]
+inherit = bar/base
+monitor = ${env:MONITOR:}
+
+modules-left = i3 xwindow 
+modules-right = previous playpause next spotify pulseaudio cpu memory battery1 date
+
+tray-position = none
