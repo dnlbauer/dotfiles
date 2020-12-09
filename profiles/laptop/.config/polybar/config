@@ -9,7 +9,7 @@ inherit = bar/base
 monitor = ${env:MONITOR:}
 
 modules-left = i3 xwindow 
-modules-right = previous playpause next spotify pulseaudio cpu memory battery1 date
+modules-right = previous playpause next spotify pulseaudio cpu memory battery1 date notifyd
 
 tray-position = right
 tray-padding = 2

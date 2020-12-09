@@ -46,7 +46,8 @@ set cartoon_oval_length, 0.8
 set sphere_scale, 0.5
 
 # custom colors
-set_color sodium, [0.0, 0.5, 1.0]
+set_color sodium, [1.0, 0.87, 0.37]
+set_color potassium, [0.0, 0.5, 1.0]
 
 # bigger dashes
 set dash_gap, .35

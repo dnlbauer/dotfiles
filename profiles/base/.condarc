@@ -1,7 +1,7 @@
-channel_priority: strict
-channels:
-  - spyder-ide
-  - conda-forge
-  - bioconda
-  - defaults
-  - salilab
+#channel_priority: strict
+#channels:
+#  - spyder-ide
+#  - conda-forge
+#  - bioconda
+#  - defaults
+#  - salilab
