@@ -5,14 +5,15 @@
 		"equimolar",
 		"transmembrane",
 		"Lichtenberg",
-		"Gromacs"
+		"Gromacs",
+		"solvated"
 	],
 	"auto_complete": false,
 	"color_scheme": "Packages/gruvbox/gruvbox (Dark) (Medium).sublime-color-scheme",
 	"detect_indentation": false,
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"font_face": "Hack for Powerline Regular",
-	"font_size": 11,
+	"font_size": 13,
 	"hot_exit": false,
 	"ignored_packages":
 	[
