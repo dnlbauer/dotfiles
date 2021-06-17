@@ -218,6 +218,11 @@ for_window [class="Toplevel"] floating enable
 for_window [title="Figure*" instance="matplotlib"] floating enable
 for_window [window_role="conversation" class="Pidgin"] floating enable
 
+# use tiling mode only for main/chat Skype window and floating of all dialogs
+# Skype main window title looks like this - "alexey.diyan - Skype™"
+for_window [instance="skype" title="^.*?(?<!Skype™)$"] floating enable
+for_window [instance="skype" title="Skype™|Call with|File Transfers"] floating disable
+
 # Pulse Audio controls
 bindsym --release XF86AudioLowerVolume exec --no-startup-id amixer  sset Master 5%- #decrease sound volume
 bindsym --release XF86AudioRaiseVolume exec --no-startup-id amixer  sset Master 5%+ #increase sound volume
@@ -244,7 +249,7 @@ bindsym $mod+Shift+s exec --no-startup-id ~/.config/i3/scripts/change_monitor.sh
 #exec feh --bg-fill /home/bauer/artistic/artistici2.png
 #exec --no-startup-id xautolock -time 5 -locker 'i3lock -i ~/.lockscreen/`ls /home/bauer/lockscreens | shuf -n 1` -t -f'
 #exec --no-startup-id thunderbird
-#exec --no-startup-id skypeforlinux
+#exec --no-startup-id skype
 #exec --no-startup-id mattermost-desktop
 #exec --no-startup-id nextcloud 
 #exec --no-startup-id nm-applet

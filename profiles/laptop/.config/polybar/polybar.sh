@@ -6,14 +6,21 @@ killall -q polybar
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 if type "xrandr"; then
-  # primary screen
-  for m in $(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload laptop &
-  done
-  # other screens
-  for m in $(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1); do
-    MONITOR=$m polybar --reload laptop_secondary &
-  done
+    NUM_DEVICES=$(xrandr --query | grep " connected" | cut -d" " -f1 | wc -l);
+    if [[ $NUM_DEVICES -lt 2 ]]; then
+        for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+            MONITOR=$m polybar --reload laptop &
+        done  
+    else
+        # primary screen
+        for m in $(xrandr --query | grep " connected" | grep "primary" | cut -d" " -f1); do
+            MONITOR=$m polybar --reload laptop &
+        done
+        # other screens
+        for m in $(xrandr --query | grep " connected" | grep -v "primary" | cut -d" " -f1); do
+            MONITOR=$m polybar --reload laptop_secondary &
+        done
+    fi
 else
   polybar --reload laptop &
 fi

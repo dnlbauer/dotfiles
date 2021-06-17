@@ -6,12 +6,14 @@
 	"installed_packages":
 	[
 		"Anaconda",
+		"ANSIescape",
 		"bioSyntax",
 		"Color Convert",
-		"Color Highlight",
-		"ColorPicker",
+		"Color Highlighter",
+		"CSV Record View",
 		"CWL Syntax Highlighting",
 		"Fortran",
+		"Git",
 		"gruvbox",
 		"Incomprehensible Ex",
 		"INI",
@@ -35,6 +37,6 @@
 		"SideBarEnhancements",
 		"Tabnine",
 		"Thesaurus",
-		"WordCount"
-	]
+		"WordCount",
+	],
 }

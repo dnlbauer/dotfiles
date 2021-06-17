@@ -5,6 +5,7 @@ export TERM="xterm-256color"
 zmodules=(ssh directory environment git history input utility custom \
           syntax-highlighting history-substring-search prompt completion fasd autosuggestions)
 
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 DEFAULT_USER=bauer
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context  dir vcs anaconda)

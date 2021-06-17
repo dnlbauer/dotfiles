@@ -49,12 +49,12 @@ backend_fallback: True
 ### LINES
 # See http://matplotlib.org/api/artist_api.html#module-matplotlib.lines for more
 # information on line properties.
-lines.linewidth   : 1     # line width in points
+lines.linewidth   : 1.5     # line width in points
 #lines.linestyle   : -       # solid line
 #lines.color       : C0      # has no affect on plot(); see axes.prop_cycle
 #lines.marker      : None    # the default marker
 #lines.markeredgewidth  : 1.0     # the line width around the marker symbol
-#lines.markersize  : 6            # markersize, in points
+lines.markersize  : 6            # markersize, in points
 #lines.dash_joinstyle : miter        # miter|round|bevel
 #lines.dash_capstyle : butt          # butt|round|projecting
 #lines.solid_joinstyle : miter       # miter|round|bevel
@@ -96,36 +96,36 @@ lines.linewidth   : 1     # line width in points
 #boxplot.showfliers  : True
 #boxplot.meanline    : False
 
-#boxplot.flierprops.color           : 'k'
-#boxplot.flierprops.marker          : '.'
-#boxplot.flierprops.markerfacecolor : 'none'
-#boxplot.flierprops.markeredgecolor : 'k'
-boxplot.flierprops.markersize      : 1
-#boxplot.flierprops.linestyle       : 'none'
+boxplot.flierprops.color           : k
+boxplot.flierprops.marker          : .
+#boxplot.flierprops.markerfacecolor : none
+#boxplot.flierprops.markeredgecolor : k
+boxplot.flierprops.markersize      : 2
+#boxplot.flierprops.linestyle       : none
 #boxplot.flierprops.linewidth       : 1.0
 
-#boxplot.boxprops.color     : 'k'
+boxplot.boxprops.color     : k
 #boxplot.boxprops.linewidth : 1.0
-#boxplot.boxprops.linestyle : '-'
+#boxplot.boxprops.linestyle : -
 
-#boxplot.whiskerprops.color     : 'k'
-#boxplot.whiskerprops.linewidth : 1.0
-#boxplot.whiskerprops.linestyle : '-'
+boxplot.whiskerprops.color     : k
+boxplot.whiskerprops.linewidth : 1
+#boxplot.whiskerprops.linestyle : -
 
-#boxplot.capprops.color     : 'k'
+boxplot.capprops.color     : k
 #boxplot.capprops.linewidth : 1.0
-#boxplot.capprops.linestyle : '-'
+#boxplot.capprops.linestyle : -
 
-#boxplot.medianprops.color     : 'C1'
+boxplot.medianprops.color     : k
 #boxplot.medianprops.linewidth : 1.0
-#boxplot.medianprops.linestyle : '-'
+#boxplot.medianprops.linestyle : -
 
-#boxplot.meanprops.color           : 'C2'
-#boxplot.meanprops.marker          : '^'
-#boxplot.meanprops.markerfacecolor : 'C2'
-#boxplot.meanprops.markeredgecolor : 'C2'
+#boxplot.meanprops.color           : C2
+#boxplot.meanprops.marker          : ^
+#boxplot.meanprops.markerfacecolor : C2
+#boxplot.meanprops.markeredgecolor : C2
 #boxplot.meanprops.markersize      :  6
-#boxplot.meanprops.linestyle       : 'none'
+#boxplot.meanprops.linestyle       : none
 #boxplot.meanprops.linewidth       : 1.0
 
 ### FONT
@@ -174,7 +174,7 @@ boxplot.flierprops.markersize      : 1
 # settings for axes and ticks. Special text sizes can be defined
 # relative to font.size, using the following values: xx-small, x-small,
 # small, medium, large, x-large, xx-large, larger, or smaller
-# font.size           : 10
+font.size           : 12
 #font.serif          : DejaVu Serif, Bitstream Vera Serif, New Century Schoolbook, Century Schoolbook L, Utopia, ITC Bookman, Bookman, Nimbus Roman No9 L, Times New Roman, Times, Palatino, Charter, serif
 #font.sans-serif     : DejaVu Sans, Bitstream Vera Sans, Lucida Grande, Verdana, Geneva, Lucid, Arial, Helvetica, Avant Garde, sans-serif
 #font.cursive        : Apple Chancery, Textile, Zapf Chancery, Sand, Script MT, Felipa, cursive
@@ -281,15 +281,15 @@ text.usetex         : False  # use latex for all text handling. The following fo
 # default fontsizes for ticklabels, and so on.  See
 # http://matplotlib.org/api/axes_api.html#module-matplotlib.axes
 #axes.facecolor      : white   # axes background color
-axes.edgecolor      : black   # axes edge color
+axes.edgecolor       : black   # axes edge color
 #axes.linewidth      : 0.8     # edge linewidth
-axes.grid           : True   # display grid or not
+axes.grid            : False   # display grid or not
 #axes.titlesize      : large   # fontsize of the axes title
 #axes.titlepad       : 6.0     # pad between axes and title in points
-axes.labelsize       : 16  #medium  # fontsize of the x any y labels
+axes.labelsize       : 12        # fontsize of the x any y labels
 #axes.labelpad       : 4.0     # space between label and axis
 #axes.labelweight    : normal  # weight of the x and y labels
-axes.labelcolor     : black
+axes.labelcolor      : black
 #axes.axisbelow      : 'line'  # draw axis gridlines and ticks below
                                # patches (True); above patches but below
                                # lines ('line'); or above all (False)
@@ -315,19 +315,17 @@ axes.labelcolor     : black
 
 axes.spines.left   : True   # display axis spines
 axes.spines.bottom : True
-axes.spines.top    : False
-axes.spines.right  : False
+axes.spines.top    : True
+axes.spines.right  : True
 
 
 #axes.unicode_minus  : True    # use unicode for the minus symbol
                                # rather than hyphen.  See
                                # http://en.wikipedia.org/wiki/Plus_and_minus_signs#Character_codes
-#axes.prop_cycle: cycler('color', ['2864af', 'cc3f39', '2D882D', 'e8e634', '423687', '903c3f'])
-#axes.prop_cycle    : cycler('color', ['348ABD', '7A68A6', 'A60628', '467821', 'CF4457', '188487', 'E24A33'])
 
-axes.prop_cycle    : cycler('color', ['e41a1c', '0971e6', '41933e', '853990', 'eb7f14', 'f7cf00', '444444', 'a1a1a1', 'ff728a', '37c7c5'])
+axes.prop_cycle    : cycler('color', ['3a50a1', 'd84742', 'ffb333', '444444', '5d9f45', '853990'])
 
-patch.facecolor: FFFFFF #0072B2
+patch.facecolor: FFFFFF 
 axes.autolimit_mode : data # How to scale axes limits to the data.
                             # Use "data" to use data limits, plus some margin
                             # Use "round_number" move to the nearest "round" number
@@ -345,7 +343,7 @@ axes.ymargin        : .00  # y margin See `axes.Axes.margins`
 xtick.major.pad      : 6      # distance to major tick label in points
 xtick.minor.pad      : 6      # distance to the minor tick label in points
 xtick.color          : 000000 #797979      # color of the tick labels
-xtick.labelsize      : 16# medium # fontsize of the tick labels
+xtick.labelsize      : 12    # fontsize of the tick labels
 xtick.direction : out # direction: in or out
 
 #ytick.major.size     : 0      # major tick size in points
@@ -353,7 +351,7 @@ xtick.direction : out # direction: in or out
 ytick.major.pad      : 6      # distance to major tick label in points
 ytick.minor.pad      : 6      # distance to the minor tick label in points
 ytick.color          : 000000 #797979      # color of the tick labels
-ytick.labelsize      : 16 #medium # fontsize of the tick labels
+ytick.labelsize      : 12     # fontsize of the tick labels
 ytick.direction      : out     # direction: in or out
 
 
@@ -390,8 +388,8 @@ legend.fontsize      : 8 # 10
 #figure.titlesize : large      # size of the figure title (Figure.suptitle())
 #figure.titleweight : normal   # weight of the figure title
 figure.figsize   : 6.4,4.8   # figure size in inches
-figure.dpi       : 600      # figure dots per inch
-#figure.facecolor : yellow #white   # figure facecolor; 0.75 is scalar gray
+figure.dpi       : 300      # figure dots per inch
+#figure.facecolor : white   # figure facecolor; 0.75 is scalar gray
 # figure.edgecolor : white   # figure edgecolor
 figure.autolayout : True  # When True, automatically adjust subplot
                             # parameters to make the plot fit the figure
@@ -430,7 +428,7 @@ figure.autolayout : True  # When True, automatically adjust subplot
 #errorbar.capsize : 0             # length of end cap on error bars in pixels
 
 ### HISTOGRAM PLOTS
-#hist.bins : 10                   # The default number of histogram bins.
+hist.bins : 100                   # The default number of histogram bins.
                                   # If Numpy 1.11 or later is
                                   # installed, may also be `auto`
 
@@ -504,7 +502,7 @@ savefig.dpi         : 300   # figure dots per inch or 'figure'
 
 # svg backend params
 #svg.image_inline : True       # write raster image data directly into the svg file
-#svg.fonttype : 'path'         # How to handle SVG fonts:
+#svg.fonttype : none         # How to handle SVG fonts:
 #    'none': Assume fonts are installed on the machine where the SVG will be viewed.
 #    'path': Embed characters as paths -- supported by most SVG renderers
 #    'svgfont': Embed characters as SVG fonts -- supported only by Chrome,
