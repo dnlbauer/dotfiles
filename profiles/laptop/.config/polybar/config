@@ -14,6 +14,13 @@ modules-right = previous playpause next spotify pulseaudio cpu memory battery1 d
 tray-position = right
 tray-padding = 2
 
+
+[bar/laptop_standalone]
+inherit = bar/laptop
+monitor = ${env:MONITOR:}
+
+modules-right = previous playpause next spotify pulseaudio backlight-acpi cpu memory battery1 date notifyd
+
 [bar/laptop_secondary]
 inherit = bar/base
 monitor = ${env:MONITOR:}

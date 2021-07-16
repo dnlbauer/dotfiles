@@ -217,11 +217,12 @@ for_window [title="PyMOL Viewer"] floating enable
 for_window [class="Toplevel"] floating enable
 for_window [title="Figure*" instance="matplotlib"] floating enable
 for_window [window_role="conversation" class="Pidgin"] floating enable
+for_window [class="Com.github.alainm23.planner"] floating enable
 
 # use tiling mode only for main/chat Skype window and floating of all dialogs
 # Skype main window title looks like this - "alexey.diyan - Skype™"
 for_window [instance="skype" title="^.*?(?<!Skype™)$"] floating enable
-for_window [instance="skype" title="Skype™|Call with|File Transfers"] floating disable
+for_window [instance="skype" title="Skype|Skype™|Call with|File Transfers"] floating disable
 
 # Pulse Audio controls
 bindsym --release XF86AudioLowerVolume exec --no-startup-id amixer  sset Master 5%- #decrease sound volume

@@ -7,6 +7,8 @@
 [profiles]
   [[default]]
     allow_bold = False
+    background_darkness = 0.53
+    background_type = transparent
     cursor_color = "#aaaaaa"
     font = Hack 12
     show_titlebar = False
@@ -21,6 +23,7 @@
     [[[child1]]]
       parent = window0
       type = Terminal
+      profile = default
     [[[window0]]]
       parent = ""
       type = Window
