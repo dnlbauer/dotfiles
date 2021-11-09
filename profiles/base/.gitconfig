@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = daniel
-	email = bauer@cbs.tu-darmstadt.de
+	email = github@dbauer.me
 [pack]
 	threads = 8
 [merge]
@@ -12,3 +12,6 @@
 [alias]
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	cm = !git add -A && git commit -m 
+[credential "https://github.com"]
+	helper = 
+	helper = !/home/bauer/conda/bin/gh auth git-credential

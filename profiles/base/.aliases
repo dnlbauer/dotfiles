@@ -16,10 +16,10 @@ function gitignore() {
 }
 
 # lhr
-alias squeue="ssh lcluster11 squeue"
-alias csum="ssh lcluster11 csum"
-alias csreport="ssh lcluster11 csreport"
-alias scancel="ssh lcluster11 scancel"
+alias squeue="ssh lcluster17 squeue"
+alias csum="ssh lcluster17 csum"
+alias csreport="ssh lcluster17 csreport"
+alias scancel="ssh lcluster17 scancel"
 
 # snakemake use all cores by default
 sm() {
