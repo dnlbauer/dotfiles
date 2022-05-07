@@ -41,3 +41,5 @@ eval "$(fasd --init auto)"
 #if hash snakemake 2>/dev/null; then
 #    compdef _gnu_generic snakemake
 #fi
+
+export PATH="$HOME/.poetry/bin:$PATH"

@@ -117,7 +117,7 @@
 	"detect_indentation": false,
 	"dictionary": "Packages/Language - English/en_US.dic",
 	"font_face": "Hack for Powerline Regular",
-	"font_size": 15,
+	"font_size": 12,
 	"hot_exit": false,
 	"ignored_packages":
 	[
@@ -128,6 +128,7 @@
 		"RestructuredText",
 		"Rust",
 		"Six",
+		"Tabnine",
 		"Vintage",
 		"Vintageous",
 	],
