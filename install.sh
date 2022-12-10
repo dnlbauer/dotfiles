@@ -14,16 +14,6 @@ else
 	echo "zgen already exists."
 fi
 
-# Powerlevel9k Theme
-if [ ! -d "$HOME/.zim/modules/prompt/external-themes/powerlevel9k" ]; then
-	echo "Installing Powerlevel9k theme"
-	git clone --depth=1 https://github.com/bhilburn/powerlevel9k.git \
-		~/.zim/modules/prompt/external-themes/powerlevel9k
-	ln -s ~/.zim/modules/prompt/external-themes/powerlevel9k/powerlevel9k.zsh-theme ~/.zim/modules/prompt/functions/prompt_powerlevel9k_setup
-else
-	echo "Powerlevel9k already exists."
-fi
-
 # Conda and pip
 if [ ! -d "$HOME/conda" ]; then
 	echo "Installing Conda"
