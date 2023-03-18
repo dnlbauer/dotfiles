@@ -1,0 +1,14 @@
+rupa/z  # jump into most used directories
+
+belak/zsh-utils path:history  # enable history
+belak/zsh-utils path:editor  # allow vim bindings
+
+# completions and suggestions
+zsh-users/zsh-history-substring-search
+zsh-users/zsh-completions  # additionally completions
+zsh-users/zsh-autosuggestions
+#ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# theme
+romkatv/powerlevel10k
+

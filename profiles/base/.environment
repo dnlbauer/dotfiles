@@ -1,19 +1,21 @@
 #!/bin/bash
 
 # system preferences
+export TERM="xterm-256color"
 export LANG=en_US.UTF-8
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Prefered programs
 export EDITOR='vim'
-export TERMINAL="terminator"
-export BROWSER="firefox"
-export PAGER='most'
-export BAT_PAGER='less'
+if type most > /dev/null; then
+    export PAGER='most'
+else
+    export PAGER='less'
+fi
 
-# Path
-export PATH="${PATH}:$HOME/.cargo/bin"
-export PATH="${PATH}:$HOME/bin" # binaries
-export PATH="${PATH}:$HOME/scripts" # scripts
-export PATH="${PATH}:$HOME/.local/bin" # python executeables
-export PATH="${PATH}:$HOME/bin/pushbullet-bash"
+
+# Change Path
+export PATH="${PATH}:$HOME/.local/bin"
+if [ -d $HOME/.cargo ]; then 
+    export PATH="${PATH}:$HOME/.cargo/bin"
+fi

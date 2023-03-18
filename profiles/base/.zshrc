@@ -1,45 +1,35 @@
-source "${HOME}/.zgenrc"
-
-# source other dotfiles
-source $HOME/.environment
-if [ -f "$HOME/.environment.local" ]; then
-    source $HOME/.environment.local
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/bauer/conda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/bauer/conda/etc/profile.d/conda.sh" ]; then
-        . "/home/bauer/conda/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/bauer/conda/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-source $HOME/.aliases
-# config specific to this machine
 if [ -f $HOME/.zshrc_local ]; then
     source $HOME/.zshrc_local
 fi
 
-if [ -n "$GMXRC" ]; then
-    source $GMXRC
+ENV_FILE="$HOME/.environment"
+LOCAL_ENV_FILE="$HOME/.environment.local"
+
+ALIAS_FILE="$HOME/.aliases"
+LOCAL_ALIAS_FILE="$HOME/.aliases.local"
+
+source $ENV_FILE
+if [ -f $LOCAL_ENV_FILE ]; then
+    source $LOCAL_ENV_FILE
+fi
+source $ALIAS_FILE
+if [ -f $LOCAL_ALIAS_FILE ]; then
+    source $LOCAL_ALIAS_FILE
 fi
 
-# fasd autocompletion
-eval "$(fasd --init auto)"
 
-# marker
-[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
+source $HOME/.antidote/antidote.zsh
+antidote load
 
-# snakemake autocomplete
-#if hash snakemake 2>/dev/null; then
-#    compdef _gnu_generic snakemake
-#fi
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export PATH="$HOME/.poetry/bin:$PATH"
+# vim mode
+bindkey -v

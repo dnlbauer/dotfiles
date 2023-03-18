@@ -1,38 +1,3 @@
 # aliases
-if [ -f .cargo/bin/bat ]; then
-    alias cat='bat'
-fi	
 alias clip='xsel --clipboard'
-alias groclean='rm \#*'
-alias latexclean='for i in `*aux *bbl *blg *fdb_latexmk *fls *lof *log *lot *out *synctex.gz *toc`; do rm $i; done'
 alias ls='ls --color=auto -lh'
-alias workon='source activate' # enable anaconda environ
-alias cwl="cwl-runner"
-
-function gitignore() {
-    for i in "$@"; do
-        echo $i >> .gitignore
-    done
-}
-
-# lhr
-alias squeue="ssh lcluster17 squeue"
-alias csum="ssh lcluster17 csum"
-alias csreport="ssh lcluster17 csreport"
-alias scancel="ssh lcluster17 scancel"
-
-# snakemake use all cores by default
-sm() {
-    if [[ "$*" == *"-j"* || "$*" == *"--jobs"* || "$*" == *"--cores"* ]]; then
-        snakemake $@
-    else
-        snakemake -j all $@
-    fi 
-}
-
-# extract whatever archive
-alias extract="dtrx"
-
-# faster sshfs
-#alias sshfs="sshfs -o Ciphers=arcfour,Compression=no,auto_cache"
-#alias sshfs="sshfs -o Compression=no,auto_cache"

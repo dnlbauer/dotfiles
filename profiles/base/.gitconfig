@@ -9,6 +9,7 @@
 	tool = kdiff3
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
+	autocrlf = input
 [alias]
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	cm = !git add -A && git commit -m 
