@@ -27,9 +27,10 @@ fi
 
 
 # vundle
-if [ ! -d "$HOME/.vim/bundle" ]; then
-    echo "setup vundle"
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d "$HOME/.vim/autoload" ]; then
+    echo "setup vim plug"
+    curl -fLo /.vim/autoload/plug.vim --create-dirs \
+	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # linking dotfiles
