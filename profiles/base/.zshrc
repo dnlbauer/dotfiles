@@ -33,3 +33,6 @@ antidote load
 
 # vim mode
 bindkey -v
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+bindkey '^f' fzf-file-widget 

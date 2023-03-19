@@ -25,13 +25,24 @@ else
     fi
 fi
 
+# fzf
+if [ ! -d "$HOME/.fzf" ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
+    if [ ! -f "$HOME/.fzf/bin" ]; then
+        $HOME/.fzf/install --bin    
+    fi
+fi
 
-# vundle
+
+# vimplug
 if [ ! -d "$HOME/.vim/autoload" ]; then
     echo "setup vim plug"
-    curl -fLo /.vim/autoload/plug.vim --create-dirs \
+    curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
 # linking dotfiles
-$HOME/.dotfiles/dotfiles.sh link base  
+$HOME/.dotfiles/dotfiles.sh link base
+
+# reload shell
+zsh

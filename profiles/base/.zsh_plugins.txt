@@ -12,3 +12,5 @@ zsh-users/zsh-autosuggestions
 # theme
 romkatv/powerlevel10k
 
+ohmyzsh/ohmyzsh path:plugins/ssh-agent
+sunlei/zsh-ssh
