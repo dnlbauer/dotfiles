@@ -33,8 +33,7 @@ if [ ! -d "$HOME/.fzf" ]; then
     fi
 fi
 
-# diff-so-fancy && diff-highlight
-pip install --user diff-highlight
+# diff-so-fancy
 if [ ! -f "$HOME/.local/bin/diff-so-fancy" ]; then
     if [ ! -d "$HOME/.local/lib/diff-so-fancy" ]; then
         git clone --depth 1 https://github.com/so-fancy/diff-so-fancy.git $HOME/.local/lib/diff-so-fancy
