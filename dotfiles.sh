@@ -35,13 +35,19 @@ link_profile() {
 		# link file
 		echo "Linking $src to $dst"
 		if [ -f "${dst}" ] || [ -L "${dst}" ]; then
-			echo "$dst_file esists. Override? [y/N]"
-			read response
-			if [ "$response" == 'y' ] || [ "$response" == 'Y' ] \
-				|| [ "$response" == 'yes' ] || [ "$response" == 'Yes' ]; then
-				ln -sf $src $dst
+			difference="$(diff -y $src $dst)"
+			if [ "$?" -ne 0 ]; then
+				echo "$difference"
+				echo "$(basename $dst) already exists (and differs). Override? [y/N]"
+				read response
+				if [ "$response" == 'y' ] || [ "$response" == 'Y' ] \
+					|| [ "$response" == 'yes' ] || [ "$response" == 'Yes' ]; then
+					ln -sf $src $dst
+				else
+					echo "Skipping $file"
+				fi
 			else
-				echo "Skipping $file"
+				echo "Skipping $file (no diff)"
 			fi
 		else
 			ln -s $src $dst	
