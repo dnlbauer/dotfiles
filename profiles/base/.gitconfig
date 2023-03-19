@@ -38,7 +38,6 @@
 	colorMoved = True
 [commit]
 	verbose = true
-
 [color "status"]
 	added = green
 	changed = red
@@ -50,3 +49,5 @@
 	defaultBranch = main
 [include]
 	path = ~/.gitconfig.local
+[pull]
+	rebase = false
