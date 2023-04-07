@@ -1,10 +1,8 @@
-#!/bin/bash
-
 # fzf
 if [ ! -d "$HOME/.fzf" ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git $HOME/.fzf
     if [ ! -f "$HOME/.fzf/bin" ]; then
-        $HOME/.fzf/install --bin    
+	$HOME/.fzf/install --completion --key-bindings --update-rc
     fi
 fi
 
@@ -50,8 +48,6 @@ else
 	echo "antidote already exists."
     fi
     
-    # reload shell
-    source ~/.zshrc
 fi
 
 
