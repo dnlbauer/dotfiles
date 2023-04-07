@@ -5,3 +5,13 @@ alias ls='ls --color=auto -lh'
 if type nvim > /dev/null; then
     alias vim=nvim
 fi
+
+# file type aliases
+alias -s txt=vim
+alias -s md=vim
+alias -s json=vim
+alias -s yaml=vim
+alias -s yml=vim
+alias -s ini=vim
+alias -s conf=vim
+alias -s cfg=vim
