@@ -1,6 +1,7 @@
 # aliases
 alias clip='xsel --clipboard'
 alias ls='ls --color=auto -lh'
+alias ll='ls --color=auto -lh'
 
 if type nvim > /dev/null; then
     alias vim=nvim
@@ -15,3 +16,5 @@ alias -s yml=vim
 alias -s ini=vim
 alias -s conf=vim
 alias -s cfg=vim
+
+alias now='date +"%y%m%d%H%M%S"'
