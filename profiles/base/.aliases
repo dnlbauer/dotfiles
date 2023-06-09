@@ -7,6 +7,10 @@ if type nvim > /dev/null; then
     alias vim=nvim
 fi
 
+if type bat > /dev/null; then
+    alias cat=bat
+fi
+
 # file type aliases
 alias -s txt=vim
 alias -s md=vim

@@ -21,6 +21,18 @@ if [ ! -d "$HOME/.vim/autoload" ]; then
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+# install rust
+if [ ! -d "$HOME/.cargo" ]; then
+    echo "setup cargo"
+    curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path -y --profile minimal -q
+fi
+
+# install some rust packages
+for package in ripgrep bat; do
+    echo "setup $package"
+    $HOME/.cargo/bin/cargo install -q $package
+done
+
 # linking dotfiles
 $HOME/.dotfiles/dotfiles.sh link base
 

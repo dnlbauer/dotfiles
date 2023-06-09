@@ -17,6 +17,4 @@ fi
 # Change Path
 export PATH="${PATH}:$HOME/.local/bin"
 export PATH="${PATH}:$HOME/bin"
-if [ -d $HOME/.cargo ]; then 
-    export PATH="${PATH}:$HOME/.cargo/bin"
-fi
+export PATH="${PATH}:$HOME/.cargo/bin"

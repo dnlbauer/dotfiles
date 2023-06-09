@@ -9,6 +9,10 @@ Plug 'nathanaelkane/vim-indent-guides'
 " ** features **
 Plug 'godlygeek/tabular'
 Plug 'preservim/nerdcommenter'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+nnoremap <C-f> :Files<Cr>
+nnoremap <C-g> :Rg<Cr>
 
 " ** syntax **
 Plug 'elzr/vim-json'
