@@ -16,9 +16,11 @@ nnoremap <C-g> :Rg<Cr>
 
 " ** syntax **
 Plug 'elzr/vim-json'
+Plug 'stephpy/vim-yaml'
 Plug 'lervag/vimtex'
 Plug 'ibab/vim-snakemake'
 Plug 'plasticboy/vim-markdown'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 " Always show statusline 
@@ -62,4 +64,4 @@ let g:indent_guides_guide_size = 1
 set cursorline
 
 " yaml spacing
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yml,yaml setlocal ts=2 sts=2 sw=2 expandtab

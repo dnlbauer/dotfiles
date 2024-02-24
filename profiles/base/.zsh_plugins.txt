@@ -14,3 +14,5 @@ romkatv/powerlevel10k
 
 ohmyzsh/ohmyzsh path:plugins/ssh-agent
 sunlei/zsh-ssh
+
+ohmyzsh/ohmyzsh path:plugins/git
