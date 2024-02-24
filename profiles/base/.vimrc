@@ -60,3 +60,6 @@ let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 
 set cursorline
+
+" yaml spacing
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
