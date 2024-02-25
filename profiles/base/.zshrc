@@ -24,7 +24,7 @@ if [ -f $LOCAL_ALIAS_FILE ]; then
     source $LOCAL_ALIAS_FILE
 fi
 
-
+autoload -U +X compinit && compinit # fix compdef not found
 source $HOME/.antidote/antidote.zsh
 antidote load
 
