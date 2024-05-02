@@ -19,8 +19,10 @@ Plug 'elzr/vim-json'
 Plug 'stephpy/vim-yaml'
 Plug 'lervag/vimtex'
 Plug 'ibab/vim-snakemake'
-Plug 'plasticboy/vim-markdown'
+Plug 'gabrielelana/vim-markdown'
 Plug 'airblade/vim-gitgutter'
+Plug 'manabuishii/vim-cwl'
+
 call plug#end()
 
 " Always show statusline 
@@ -65,3 +67,16 @@ set cursorline
 
 " yaml spacing
 autocmd FileType yml,yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" folding
+:setlocal foldmethod=syntax " use language syntax for folding
+set foldlevelstart=99 " do not fold on open
+
+" change leader key
+let mapleader = "."
+
+set clipboard+=unnamed " use system clipboard
+set paste " paste to/from vim
+set go+=a " auto copy visual selection
+
+
