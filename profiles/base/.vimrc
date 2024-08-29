@@ -30,12 +30,14 @@ nnoremap <C-f> :Files<Cr>
 nnoremap <C-g> :Rg<Cr>
 
 " ** syntax **
-Plug 'elzr/vim-jsmn'
+Plug 'https://github.com/elzr/vim-json.git'
 Plug 'stephpy/vim-yaml'
 Plug 'lervag/vimtex'
 Plug 'ibab/vim-snakemake'
 Plug 'plasticboy/vim-markdown'
 Plug 'airblade/vim-gitgutter'
+
+Plug 'fmoralesc/vim-tutor-mode'
 call plug#end()
 
 let g:vim_markdown_folding_disabled = 1
