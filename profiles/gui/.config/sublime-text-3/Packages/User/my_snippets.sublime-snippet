@@ -1,6 +1,0 @@
-<snippet>
-    <content><![CDATA[
-#!/usr/bin/env ${1:exec}
-]]></content>
-    <tabTrigger>shebang</tabTrigger>
-</snippet>
