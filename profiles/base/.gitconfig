@@ -1,21 +1,19 @@
 #git config --global rerere.enabled true This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = daniel
-	email = github@dbauer.me
-[pack]
-	threads = 8
-[merge]
-	tool = kdiff3
+    name = Daniel Bauer
+    email = github@dbauer.me
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = sh -c 'command -v diff-so-fancy >/dev/null && exec diff-so-fancy || less --tabs=4 -RX'
+    pager = less
 	autocrlf = input
+	attributesFile = /home/dbauer/.gitattributes
 [alias]
 	co = commit
 	ch = checkout
 	br = branch
 [interactive]
-	diffFilter = diff-so-fancy --patch
+    diffFilter = sh -c 'command -v diff-so-fancy >/dev/null && exec diff-so-fancy --patch || exec cat'
 [color]
 	ui = true
 [color "diff-highlight"]
@@ -35,7 +33,7 @@
 	enabled = true
 [diff]
 	noprefix = true
-	colorMoved = True
+    colorMoved = True
 [commit]
 	verbose = true
 [color "status"]
@@ -51,3 +49,9 @@
 	path = ~/.gitconfig.local
 [pull]
 	rebase = false
+[credential]
+	helper = store
+[gpg]
+    program = /usr/bin/gpg
+[include]
+    path = ~/.gitconfig.local
