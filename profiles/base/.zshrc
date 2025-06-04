@@ -9,6 +9,8 @@ if [ -f $HOME/.zshrc_local ]; then
     source $HOME/.zshrc_local
 fi
 
+setopt noEXTENDED_GLOB
+
 ENV_FILE="$HOME/.environment"
 LOCAL_ENV_FILE="$HOME/.environment.local"
 
