@@ -8,7 +8,7 @@ if type nvim > /dev/null; then
 fi
 
 if type bat > /dev/null; then
-    alias cat=bat
+    alias cat='bat -pp'
 fi
 
 # file type aliases

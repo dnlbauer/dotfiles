@@ -18,8 +18,8 @@ set colorcolumn=80,100,120  " color column
 
 let mapleader = "."  " change leader key
 
-set clipboard+=unnamed  " use system clipboard
-set paste  " paste to/from vim
+set clipboard^=unnamed,unnamedplus  " yank to clipboard
+
 set go+=a  " auto copy visual selection
 
 call plug#begin()
@@ -43,6 +43,7 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'airblade/vim-gitgutter'
 Plug 'manabuishii/vim-cwl'
 
+Plug 'townk/vim-autoclose'  " auto close brackets, parenthesis, ..
 call plug#end()
 
 let g:vim_markdown_folding_disabled = 1
@@ -74,3 +75,5 @@ augroup json_autocmd
   autocmd FileType json set expandtab
   autocmd FileType json set foldmethod=syntax
 augroup END
+
+
