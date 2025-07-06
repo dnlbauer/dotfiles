@@ -3,7 +3,6 @@
 Set up on new machin:
 
 ```bash
-sh -c "$(curl -fsLS get.chezmoi.io)"
-chezmoi init --apply dnlbauer
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --one-shot $GITHUB_USERNAME
 ```
 
