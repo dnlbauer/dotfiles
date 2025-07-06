@@ -1,7 +1,0 @@
-wm-restack=i3
-scroll-up=i3wm-wsnext
-scroll-down=i3wm-wsprev
-
-[global/wm]
-margin-top=5
-margin-bottom=5

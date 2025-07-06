@@ -1,8 +1,9 @@
-# dotfiles for linux/wsl
+# My dotfiles
 
-clone to `.dotfiles`.
+Set up on new machin:
 
-Start by installing the base configuration via `./install.sh`.
-Then choose relevant configuration bundles with `./dotfiles.sh bundname`
-(i.e. `./dotfiles.sh gui`)
+```bash
+sh -c "$(curl -fsLS get.chezmoi.io)"
+chezmoi init --apply dnlbauer
+```
 
