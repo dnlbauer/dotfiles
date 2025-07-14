@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
     name = Daniel Bauer
-    email = github@dbauer.me
+    email = {{ .github_email | quote }}
 [core]
     pager = sh -c 'command -v diff-so-fancy >/dev/null && exec diff-so-fancy || less --tabs=4 -RX'
     pager = less

@@ -1,0 +1,8 @@
+{{- $github_email := promptStringOnce . "github_email" "Github Email address" -}}
+
+[data]
+    github_email = {{ $github_email | quote }}
+[git]
+    autoPush = true
+    autoCommit = true
+    commitMessageTemplate = ".commit_message.tmpl"
