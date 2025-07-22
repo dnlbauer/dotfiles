@@ -1,7 +1,7 @@
 # colorize output
 alias ls='ls --color=auto'
 alias l='ls --color=auto -lFh'
-alias ll='ll --color=auto'
+alias ll='ls -lah --color=auto'
 
 # always create subdirs
 alias mkdir='mkdir -p'
