@@ -7,6 +7,7 @@ belak/zsh-utils path:editor  # allow vim bindings
 zsh-users/zsh-history-substring-search
 zsh-users/zsh-completions  # additionally completions
 zsh-users/zsh-autosuggestions
+djui/alias-tips
 
 # theme
 romkatv/powerlevel10k
@@ -15,6 +16,9 @@ ohmyzsh/ohmyzsh path:plugins/ssh-agent
 sunlei/zsh-ssh
 
 ohmyzsh/ohmyzsh path:plugins/git
+ohmyzsh/ohmyzsh path:plugins/command-not-found
+ohmyzsh/ohmyzsh path:plugins/common-aliases
 
 zsh-users/zsh-syntax-highlighting
 aikow/zsh-auto-ls
+

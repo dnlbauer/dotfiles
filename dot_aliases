@@ -1,7 +1,10 @@
-# aliases
-alias clip='xsel --clipboard'
-alias ls='ls --color=auto -h'
-alias ll='ls --color=auto -h'
+# colorize output
+alias ls='ls --color=auto'
+alias l='ls --color=auto -lFh'
+alias ll='ll --color=auto'
+
+# always create subdirs
+alias mkdir='mkdir -p'
 
 if type nvim > /dev/null; then
     alias vim=nvim
@@ -10,6 +13,8 @@ fi
 if type bat > /dev/null; then
     alias cat='bat -pp'
 fi
+
+alias now='date +"%y%m%d%H%M%S"'
 
 # file type aliases
 alias -s txt=vim
@@ -21,4 +26,10 @@ alias -s ini=vim
 alias -s conf=vim
 alias -s cfg=vim
 
-alias now='date +"%y%m%d%H%M%S"'
+# copy/paste for shell
+alias pbcopy='xsel --clipboard --input'
+alias pc=pbcopy
+alias pbpaste='xsel --clipboard --output'
+alias pp=pbpaste
+alias clip='xsel --clipboard'
+
