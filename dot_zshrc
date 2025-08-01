@@ -1,3 +1,8 @@
+# autostart tmux if possible
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    exec tmux
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -16,6 +21,8 @@ LOCAL_ENV_FILE="$HOME/.environment.local"
 
 ALIAS_FILE="$HOME/.aliases"
 LOCAL_ALIAS_FILE="$HOME/.aliases.local"
+
+
 
 source $ENV_FILE
 if [ -f $LOCAL_ENV_FILE ]; then
@@ -43,5 +50,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 [ -s "$HOME/.cargo/env" ] && \. "$HOME/.cargo/env"  # Load cargo env
-
-
