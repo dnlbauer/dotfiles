@@ -117,3 +117,4 @@ let g:airline_symbols.maxlinenr = '☰ '
 let g:airline_symbols.dirty='⚡'
 
 let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', 'colnr'])
+
