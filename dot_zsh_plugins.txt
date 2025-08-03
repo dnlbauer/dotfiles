@@ -22,3 +22,6 @@ ohmyzsh/ohmyzsh path:plugins/command-not-found
 zsh-users/zsh-syntax-highlighting
 desyncr/auto-ls
 
+# nvm installation with lazy loading
+# (faster shell startup than using nvm)
+ohmyzsh/ohmyzsh path:plugins/nvm

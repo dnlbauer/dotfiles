@@ -33,7 +33,14 @@ if [ -f $LOCAL_ALIAS_FILE ]; then
     source $LOCAL_ALIAS_FILE
 fi
 
+
 autoload -U +X compinit && compinit # fix compdef not found
+
+# configure oh-my-zsh/nvm for lazy loading nvm
+zstyle ':omz:plugins:nvm' lazy yes
+zstyle ':omz:plugins:nvm' autoload yes
+zstyle ':omz:plugins:nvm' silent-autoload yes
+
 source $HOME/.antidote/antidote.zsh
 antidote load
 
@@ -46,7 +53,3 @@ bindkey -v
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 bindkey '^f' fzf-file-widget
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-[ -s "$HOME/.cargo/env" ] && \. "$HOME/.cargo/env"  # Load cargo env
