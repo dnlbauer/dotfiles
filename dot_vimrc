@@ -43,6 +43,9 @@ Plug 'gabrielelana/vim-markdown'
 Plug 'airblade/vim-gitgutter'
 Plug 'manabuishii/vim-cwl'
 
+Plug 'MunifTanjim/nui.nvim'
+Plug 'VonHeikemen/fine-cmdline.nvim'
+
 Plug 'townk/vim-autoclose'  " auto close brackets, parenthesis, ..
 call plug#end()
 
@@ -117,4 +120,6 @@ let g:airline_symbols.maxlinenr = '☰ '
 let g:airline_symbols.dirty='⚡'
 
 let g:airline_section_z = airline#section#create(['linenr', 'maxlinenr', 'colnr'])
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'jsformatter'
 
