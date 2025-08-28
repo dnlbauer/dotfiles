@@ -26,6 +26,7 @@ call plug#begin()
 Plug 'vim-airline/vim-airline'  " colored status line at bottom
 Plug 'morhetz/gruvbox'  " theme
 Plug 'nathanaelkane/vim-indent-guides'  " indentation lines
+Plug 'djoshea/vim-autoread'  " watch for file changes
 
 " ** features **
 Plug 'preservim/nerdcommenter'
