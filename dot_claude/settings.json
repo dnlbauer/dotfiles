@@ -7,5 +7,40 @@
     "command": "~/.claude/statusline.sh",
     "padding": 0
   },
-  "model": "opusplan"
+  "enabledPlugins": {
+    "code-review@claude-code-marketplace": true
+  },
+  "alwaysThinkingEnabled": false,
+  "hooks": {
+    "PreToolUse": [
+      {
+        "command": "~/.claude/hooks/pre_tool_use_uv.py",
+        "tools": ["Bash", "Run"],
+        "timeout": 10000
+      }
+    ],
+    "Notification": [
+      {
+        "command": "~/.claude/hooks/notification_uv.py",
+        "timeout": 5000
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          "type": "command",
+          "~/.claude/hooks/post_tool_lint_uv_ruff.sh"
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          "type": "command",
+          "~/.claude/hooks/post_tool_uv_pytest.sh"
+        ]
+      }
+
+    ]
+  }
 }
