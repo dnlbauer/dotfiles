@@ -38,3 +38,4 @@ alias kp=keepassxc-cli
 
 # git
 alias gcom="git commit -m"
+alias gg="lazygit"
