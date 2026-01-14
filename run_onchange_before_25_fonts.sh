@@ -18,7 +18,6 @@ NERD_FONTS_VERSION="v3.4.0"
 NERD_FONTS=(
     "UbuntuMono"
     "SourceCodePro"
-    "JetBrainsMono"
     "AtkinsonHyperlegibleMono"
 )
 
@@ -33,6 +32,13 @@ for font in "${NERD_FONTS[@]}"; do
 
     echo "Installed ${font} Nerd Font"
 done
+
+# Install Inter (sans-serif)
+echo "Downloading Inter..."
+curl -fsSL "https://github.com/rsms/inter/releases/download/v4.1/Inter-4.1.zip" -o "${TEMP_DIR}/Inter.zip"
+unzip -q "${TEMP_DIR}/Inter.zip" -d "${TEMP_DIR}/inter"
+find "${TEMP_DIR}/inter" -path "*/Inter Desktop/*.ttf" -exec cp {} "${FONT_DIR}/" \;
+echo "Installed Inter"
 
 # Install Charis SIL
 echo "Downloading Charis SIL..."
