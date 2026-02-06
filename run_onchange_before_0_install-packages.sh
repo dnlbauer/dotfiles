@@ -6,7 +6,7 @@ echo "Installing packages"
 echo "Updating sources..."
 sudo apt update -qq
 
-for package in xsel git git-extras neovim git ripgrep; do
+for package in xsel unzip git git-extras neovim git ripgrep; do
     if dpkg -s "$package" >/dev/null 2>&1; then
         echo $package is already installed.
     else
