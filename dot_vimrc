@@ -43,6 +43,7 @@ Plug 'ibab/vim-snakemake'
 Plug 'gabrielelana/vim-markdown'
 Plug 'airblade/vim-gitgutter'
 Plug 'manabuishii/vim-cwl'
+Plug 'pdurbin/vim-tsv'
 
 Plug 'MunifTanjim/nui.nvim'
 Plug 'VonHeikemen/fine-cmdline.nvim'
@@ -79,6 +80,7 @@ augroup json_autocmd
   autocmd FileType json set expandtab
   autocmd FileType json set foldmethod=syntax
 augroup END
+
 
 if !exists('g:airline_symbols')
 let g:airline_symbols = {}
