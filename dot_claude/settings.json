@@ -7,8 +7,7 @@
     "command": "~/.claude/statusline.sh",
     "padding": 0
   },
-  "enabledPlugins": {
-    "code-review@claude-code-marketplace": true
-  },
-  "alwaysThinkingEnabled": true
+  "enabledPlugins": {},
+  "alwaysThinkingEnabled": true,
+  "effortLevel": "medium"
 }
