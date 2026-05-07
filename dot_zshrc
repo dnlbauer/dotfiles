@@ -5,6 +5,8 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+autoload -U +X compinit && compinit # fix compdef not found
+
 if [ -f $HOME/.zshrc_local ]; then
     source $HOME/.zshrc_local
 fi
@@ -25,8 +27,6 @@ source $ALIAS_FILE
 if [ -f $LOCAL_ALIAS_FILE ]; then
     source $LOCAL_ALIAS_FILE
 fi
-
-autoload -U +X compinit && compinit # fix compdef not found
 
 # configure oh-my-zsh/nvm for lazy loading nvm
 zstyle ':omz:plugins:nvm' lazy yes
