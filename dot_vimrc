@@ -53,9 +53,17 @@ call plug#end()
 
 let g:vim_markdown_folding_disabled = 1
 
-colorscheme gruvbox
+" Pick the gruvbox light/dark variant from the terminal background.
+" $TERM_BACKGROUND is set at shell startup by ~/bin/term-background (an OSC 11
+" query); default to dark when it is unset (non-interactive, no detection).
 let g:gruvbox_contrast_dark = 'hard'
-set background=dark
+let g:gruvbox_contrast_light = 'hard'
+if $TERM_BACKGROUND ==# 'light'
+  set background=light
+else
+  set background=dark
+endif
+colorscheme gruvbox
 
 
 let g:indent_guides_enable_on_vim_startup = 1

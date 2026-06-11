@@ -1,0 +1,61 @@
+#!/bin/sh
+# term-background: print "light" or "dark" for the current terminal.
+#
+# Asks the terminal for its background color with the OSC 11 escape sequence,
+# converts the reply to perceived luminance, and prints "light" or "dark".
+# Prints "dark" (the safe default) when the terminal does not answer.
+#
+# All terminal I/O happens on /dev/tty, so this is safe inside $(...).
+#
+# Works locally and over SSH (the query reaches whichever real terminal draws
+# the screen). Inside tmux/screen the multiplexer may answer instead of the
+# outer terminal, so detection can be wrong there; override it with
+#   export TERM_BACKGROUND=light   # or dark
+# in ~/.environment.local on that machine.
+#
+# Tune the response wait via TERM_BACKGROUND_TIMEOUT (tenths of a second).
+
+# Need a controlling terminal to talk to.
+[ -t 0 ] || { echo dark; exit 0; }
+exec 3<>/dev/tty || { echo dark; exit 0; }
+
+# Raw mode with a short read timeout (min 0 time N = up to N*0.1s) so an
+# unresponsive terminal costs us at most that long.
+saved=$(stty -g <&3 2>/dev/null) || { echo dark; exit 0; }
+stty raw -echo min 0 time "${TERM_BACKGROUND_TIMEOUT:-4}" <&3 2>/dev/null
+
+printf '\033]11;?\033\\' >&3            # OSC 11 query
+answer=$(dd bs=64 count=1 <&3 2>/dev/null)
+
+stty "$saved" <&3 2>/dev/null           # restore before anything else
+exec 3>&-
+
+# Expected reply: ESC ] 11 ; rgb:RRRR/GGGG/BBBB (ESC \ | BEL)
+case "$answer" in
+    *rgb:*) ;;
+    *) echo dark; exit 0 ;;
+esac
+
+rgb=${answer#*rgb:}                      # RRRR/GGGG/BBBB<terminator>
+r=${rgb%%/*}; rgb=${rgb#*/}
+g=${rgb%%/*}; rgb=${rgb#*/}
+b=$rgb
+
+# Keep the most-significant two hex digits of each component.
+r=${r%"${r#??}"}
+g=${g%"${g#??}"}
+b=${b%"${b#??}"}
+
+case "$r$g$b" in
+    ""|*[!0-9a-fA-F]*) echo dark; exit 0 ;;
+esac
+
+r=$(( 0x$r )); g=$(( 0x$g )); b=$(( 0x$b ))
+
+# Rec. 601 perceived luminance, 0-255. Over half => light.
+lum=$(( (r * 299 + g * 587 + b * 114) / 1000 ))
+if [ "$lum" -gt 127 ]; then
+    echo light
+else
+    echo dark
+fi
