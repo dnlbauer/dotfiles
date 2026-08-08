@@ -3,9 +3,6 @@ alias ls='ls --color=auto'
 alias l='ls --color=auto -lFh'
 alias ll='ls -lah --color=auto'
 
-# always create subdirs
-alias mkdir='mkdir -p'
-
 if type nvim > /dev/null; then
     alias vim=nvim
 fi
@@ -35,7 +32,3 @@ alias clip='xsel --clipboard'
 
 # keepass
 alias kp=keepassxc-cli
-
-# git
-alias gcom="git commit -m"
-alias gg="lazygit"
