@@ -13,8 +13,8 @@ echo "Extracting..."
 tar -xzf "/tmp/${TARBALL}" -C /tmp
 
 echo "Installing to ${INSTALL_DIR}..."
-sudo mv "/tmp/${BINARY_NAME}" "${INSTALL_DIR}/${BINARY_NAME}"
-sudo chmod +x "${INSTALL_DIR}/${BINARY_NAME}"
+mv "/tmp/${BINARY_NAME}" "${INSTALL_DIR}/${BINARY_NAME}"
+chmod +x "${INSTALL_DIR}/${BINARY_NAME}"
 
 echo "Cleaning up..."
 rm -f "/tmp/${TARBALL}"

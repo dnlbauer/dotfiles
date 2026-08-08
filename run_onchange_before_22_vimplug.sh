@@ -1,4 +1,6 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 if [ ! -d "$HOME/.vim/autoload" ]; then
     echo "setup vim plug"

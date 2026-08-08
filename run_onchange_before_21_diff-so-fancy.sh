@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 if [ ! -f "$HOME/.local/bin/diff-so-fancy" ]; then
     echo "Installing diff-so-fance into .local/bin"
     if [ ! -d "$HOME/.local/lib/diff-so-fancy" ]; then

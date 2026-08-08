@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -euo pipefail
+
 if ! type zsh > /dev/null; then
     echo "Cannnot change default shell to zsh: not installed"
 else

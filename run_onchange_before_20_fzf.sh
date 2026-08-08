@@ -1,4 +1,6 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+
+set -euo pipefail
 
 if [ ! -d "$HOME/.fzf" ]; then
     echo "Installing fzf into ~/.fzf"
