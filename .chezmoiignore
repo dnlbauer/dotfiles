@@ -4,3 +4,9 @@ README.md
 .agents
 CLAUDE.md
 CLAUDE.local.md
+key.txt.age
+
+{{- if ne .machineClass "private" }}
+.ssh/config.d/home
+.ssh/config.d/web
+{{- end }}

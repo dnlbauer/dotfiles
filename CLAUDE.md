@@ -40,4 +40,5 @@ There is no build, lint, or test suite — this is a config repo. "Testing" a ch
 - **`dot_gitconfig.tmpl`** — templated on `.github_email`; wires up diff-so-fancy/difftastic as pagers and nbdime for Jupyter notebook diffing. `~/.gitconfig.local` (untracked) is included for machine-specific overrides.
 - **`private_dot_config/`** → installs to `~/.config/` with restrictive permissions (nvim, matplotlib styles, fontconfig).
 - **`bin/`** → installs to `~/bin/`; `executable_term-background` detects terminal light/dark background via OSC 11 for theme-matching in nvim etc.
-- **`.chezmoiignore`** lists source-repo-only paths (`README.md`, `.claude`, `.codex`, `.agents`) that chezmoi should never install to `$HOME`.
+- **`.chezmoiignore`** lists source-repo-only paths (`README.md`, `.claude`, `.codex`, `.agents`) that chezmoi should never install to `$HOME`, plus a `machineClass`-gated conditional excluding `.ssh/config.d/home` and `.ssh/config.d/web` on any machine that isn't `machineClass = "private"`.
+- **Age encryption**: `key.txt.age` (repo root) is an age private key encrypted with a passphrase.`run_onchange_before_02_decrypt-age-key.sh.tmpl` decrypts it into `~/.config/chezmoi/key.txt`.

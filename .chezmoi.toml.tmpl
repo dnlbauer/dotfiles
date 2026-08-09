@@ -1,7 +1,14 @@
 {{- $github_email := promptStringOnce . "github_email" "Github Email address" -}}
+{{- $machineClass := promptChoiceOnce . "machineClass" "Machine class (private/server/public)" (list "private" "server" "public") -}}
+
+encryption = "age"
+[age]
+    identity = "~/.config/chezmoi/key.txt"
+    recipient = "age1q8r0dfsjadzq8fy6453acvurhzt7ndptyur0xrkwfh76tx7fwyks3lxp42"
 
 [data]
     github_email = {{ $github_email | quote }}
+    machineClass = {{ $machineClass | quote }}
 [git]
     autoPush = true
     autoCommit = true
