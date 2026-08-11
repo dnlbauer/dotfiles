@@ -5,7 +5,6 @@
     email = {{ .github_email | quote }}
 [core]
     pager = sh -c 'command -v diff-so-fancy >/dev/null && exec diff-so-fancy || less --tabs=4 -RX'
-    pager = less
 	autocrlf = input
 	attributesFile = {{ .chezmoi.homeDir }}/.gitattributes
 [alias]
@@ -35,7 +34,6 @@
 [diff]
 	noprefix = true
     colorMoved = True
-    external = difft
 [commit]
 	verbose = true
 [color "status"]
