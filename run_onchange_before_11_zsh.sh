@@ -8,7 +8,7 @@ else
     # Make ZSH the default shell environment
     if [ $(cat /etc/passwd | grep $USER | awk -F ':' '{print substr($7, length($7)-3)}') != "/zsh" ]; then
         echo "Changing shell to zsh."
-        chsh -s $(which zsh)
+        chsh -s $(which zsh) || echo "chsh failed, leaving default shell as-is." >&2
     else
         echo "Shell is already zsh."
     fi
