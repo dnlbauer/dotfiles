@@ -4,6 +4,7 @@ README.md
 CLAUDE.md
 CLAUDE.local.md
 key.txt.age
+install.sh
 
 {{- if ne .machineClass "private" }}
 .ssh/config.d/home
