@@ -2,7 +2,9 @@
 [user]
 # Please adapt and uncomment the following lines:
     name = Daniel Bauer
+{{- if .github_email }}
     email = {{ .github_email | quote }}
+{{- end }}
 [core]
     pager = sh -c 'command -v diff-so-fancy >/dev/null && exec diff-so-fancy || less --tabs=4 -RX'
 	autocrlf = input

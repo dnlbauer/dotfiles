@@ -1,5 +1,19 @@
-{{- $github_email := promptStringOnce . "github_email" "Github Email address" -}}
-{{- $machineClass := promptChoiceOnce . "machineClass" "Machine class (private/server/public)" (list "private" "server" "public") -}}
+# Check if this runs in an ephemeral container, e.g. builder, devcontainer, etc.
+{{- $ephemeralOverride := env "CHEZMOI_EPHEMERAL" -}}
+{{- $ephemeral := or (eq $ephemeralOverride "1") (eq $ephemeralOverride "true") -}}
+{{- if not $ephemeralOverride -}}
+{{-   $ephemeral = or (not stdinIsATTY) (ne (env "CODESPACES") "") (eq .chezmoi.username "vscode") -}}
+{{- end -}}
+
+{{- $github_email := "" -}}
+{{- $machineClass := "" -}}
+{{- if $ephemeral -}}
+{{-   $github_email = env "CHEZMOI_GITHUB_EMAIL" -}}
+{{-   $machineClass = env "CHEZMOI_MACHINE_CLASS" | default "public" -}}
+{{- else -}}
+{{-   $github_email = promptStringOnce . "github_email" "Github Email address" -}}
+{{-   $machineClass = promptChoiceOnce . "machineClass" "Machine class (private/server/public)" (list "private" "server" "public") -}}
+{{- end -}}
 
 encryption = "age"
 [age]
