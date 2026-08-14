@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+{{- if .ephemeral }}
+exit 0
+{{- end }}
+
 FONT_DIR="${HOME}/.local/share/fonts"
 TEMP_DIR=$(mktemp -d)
 
