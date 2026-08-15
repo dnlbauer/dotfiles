@@ -1,4 +1,4 @@
-# Check if this runs in an ephemeral container, e.g. builder, devcontainer, etc.
+{{/* Check if this runs in an ephemeral container, e.g. builder, devcontainer, etc. */}}
 {{- $ephemeralOverride := env "CHEZMOI_EPHEMERAL" -}}
 {{- $ephemeral := or (eq $ephemeralOverride "1") (eq $ephemeralOverride "true") -}}
 {{- if not $ephemeralOverride -}}
