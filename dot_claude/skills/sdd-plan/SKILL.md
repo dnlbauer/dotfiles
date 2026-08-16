@@ -218,39 +218,25 @@ The **Documentation** subsection under Scope of Change is mandatory and non-empt
 state why explicitly there. Every Functional Requirement must carry a concrete **Verify**
 block; an FR you cannot describe how to verify is not yet specified well enough.
 
-## Step 5: Agentic review loop (owned here)
+## Step 5: Agentic review (single automatic pass)
 
-Do NOT self-review. You own this loop; `sdd-spec-review` is a pure critic that only returns
-findings.
+Do NOT self-review. `sdd-spec-review` is a pure critic that only returns findings. This step
+runs **once, automatically** — do NOT auto-apply fixes and do NOT auto-loop. Step 6 hands
+control to the user for everything after this pass.
 
 1. Invoke the **Skill tool** with `skill: "sdd-spec-review"`, passing the spec path:
    ```
    Spec file: <path to spec-<slug>.md>
    ```
 2. Collect the returned findings (grouped Critical / Important / Minor) and verdict.
-3. **Surface the findings before you act — never fix silently.** Report to the user, for this
-   pass:
-   - the pass number and the overall verdict;
-   - each Critical and Important finding, one line each;
-   - for each, the change you will make to the spec to address it.
+3. For every Critical and Important finding, draft a **proposed fix** — the concrete change you
+   would make to the spec to resolve it — but do NOT apply anything yet.
 
-   Format it as a short list, e.g.:
-   ```
-   Review pass 1 — NEEDS_REVISION (2 Critical, 1 Important)
-   - [Critical] <finding> → will <fix>
-   - [Critical] <finding> → will <fix>
-   - [Important] <finding> → will <fix>
-   ```
-4. If the verdict is `NEEDS_REVISION` (any Critical or Important findings): apply the fixes you
-   just described to the spec for **every** Critical and Important finding, then go back to
-   step 1 with a **fresh** `sdd-spec-review` invocation.
-5. Repeat until the reviewer returns `APPROVED` (no Critical/Important findings), capped at
-   **3 passes**. If issues remain after the cap, stop looping and carry them into Step 6.
-   **Retain each unresolved finding's full text — title, description, Impact, and Suggested
-   fix — verbatim from the reviewer.** You will present these richly in Step 6, so do not
-   reduce them to one-liners here.
+## Step 6: Human-in-the-loop review & approval
 
-## Step 6: Human approval gate (owned here)
+This is a collaborative loop the user drives, not a gate you run alone. The user is expected to
+read the spec and the critique themselves; your job is to present findings with proposed
+solutions, then discuss, revise, and let the user decide when to re-review or approve.
 
 ### 6a. Present to user
 
@@ -258,42 +244,47 @@ Present in this order:
 
 1. **Spec summary** — 3–5 sentences: what is being built, why, the chosen approach, and the
    most important constraints/decisions.
-2. **Spec path** — the file location.
-3. **Resolved review findings** — a compact table of the Critical/Important findings the loop
-   already fixed. Keep this terse; these are done and need nothing from the user. Omit Minor
-   nits entirely.
+2. **Key design decisions** — the most consequential choices made so far, giving the user the
+   context they need before evaluating the findings below.
+3. **Spec path** — the file location, so the user can read it directly.
+4. **Review findings with proposed solutions** — every Critical and Important finding from
+   Step 5, each with your proposed fix, so the user can accept, push back on, or ignore each
+   independently. Write each in clear, plain language the user can act on without re-reading the
+   spec or the raw reviewer output — not a terse restatement of the reviewer's finding:
 
-   | Issue | How addressed |
-   |-------|---------------|
-   | <one line> | <one line — what changed in the spec> |
-
-4. **Open findings needing your input** — include this section **only if** findings remain
-   after the 3-pass cap. Do NOT put open findings in the table above, and never write
-   "cap reached" as their explanation — that tells the user nothing. Present each one with
-   enough substance to act on without re-reading the spec:
-
-   > **<finding title>**
+   > **<finding title>** [Critical|Important]
    > - What it is: <1–3 sentences describing the problem, with enough context to locate it in the spec>
    > - Why it matters: <the impact — what breaks or stays ambiguous for implementation>
-   > - Suggested fix: <the concrete change you recommend>
+   > - Proposed fix: <the concrete change you'd make>
 
-   (Repeat per open finding, drawn from the full finding text you retained in Step 5.) After
-   the list, state plainly that these are what the agentic review would still refine and that
-   the spec is otherwise sound — a spec need not be perfect to be implementable.
+   List Minor findings compactly, one line each (or omit if none are worth the user's time) —
+   they don't need the same treatment.
+5. **Overall verdict** from this review pass — APPROVED or NEEDS_REVISION.
 
-5. **Overall verdict** — APPROVED, or NEEDS_REVISION with the count of open findings.
-6. **Key design decisions** — the most consequential choices made.
+Then stop and hand control to the user — tell them you're ready to discuss, revise, or move to
+implementation whenever they are. Do not apply any fix yet.
 
-### 6b. Wait for response
+### 6b. Discuss and revise
 
-- **User approves** → the spec is final. Stop here. Do not derive tasks. Do not implement.
-  Suggest the user invoke `sdd-implement` (optionally `--worktree`) to proceed.
-- **User gives feedback** → you are the sole mutator of the spec: apply their changes to the
-  spec file, then return to **Step 6a** immediately.
-- **When open findings are present**, make the choices explicit and let the user pick: (a) tell
-  you which open findings to address — you apply the suggested fixes (or their variant) and
-  re-present; (b) run another agentic review round (return to Step 5); or (c) approve as-is,
-  accepting the open findings. Do not re-run the agentic review automatically unless asked.
+The user drives this part. Expect any mix of:
+- Accepting a proposed fix as-is.
+- Pushing back on a proposed fix or the finding itself — discuss it, and if they're right, drop
+  or change the fix rather than applying it reflexively.
+- Adding their own review comments beyond what the agentic reviewer found.
+- Asking you to apply some proposed fixes and leave others open.
+
+You are the sole mutator of the spec: apply whatever is agreed upon via Edit, and confirm what
+changed. Keep iterating on this discussion for as long as the user wants — there is no fixed
+number of rounds and no cap.
+
+### 6c. Next round or approval — the user's call
+
+Once the user is satisfied with the current round of changes, ask explicitly what they want to
+do next (don't assume):
+- **Run another `sdd-spec-review` pass** — a fresh invocation, back to Step 5. Only do this when
+  the user asks for it; never re-run the agentic review automatically.
+- **Approve as final** — stop here. Do not derive tasks. Do not implement. Suggest the user
+  invoke `sdd-implement` (optionally `--worktree`) to proceed.
 
 ## Principles
 
@@ -305,11 +296,11 @@ Present in this order:
 - Functional and non-functional requirements both belong in the spec.
 - The spec is ephemeral and lives in the repo root as `spec-<slug>.md`; never delete it.
 - You own the review loop and the human gate, and you are the only skill that edits the spec.
-- Always run the agentic review loop (Step 5) before the human gate — never self-review.
-- On each review pass, surface the Critical/Important findings and the fix you will make for
-  each before applying them — the loop is visible, never silent.
-- Present unresolved findings (cap reached) actionably: description, why it matters, and a
-  concrete suggested fix — never as a bare line whose only explanation is "cap reached".
-- After human feedback, apply changes and re-present immediately (Step 6a).
+- Run exactly one automatic agentic review pass (Step 5) before handing control to the user —
+  never self-review, never auto-apply fixes, never auto-loop past that first pass.
+- Present every Critical/Important finding with a proposed fix, but leave the decision to apply
+  it to the user — never fix silently.
+- The user controls the pace: what to accept, push back on, or add themselves, and whether
+  another review round runs or the spec is approved as-is. Only re-review when asked.
 - Do not implement anything, even if it seems obvious. Human approval is the gate before
   implementation.
