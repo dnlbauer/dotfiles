@@ -5,7 +5,7 @@ description: >-
   updating architecture and user docs as part of the work.
   Use when asked to "implement the spec", "start implementing <feature>", "implement spec-<slug>.md",
   or when the user points to a spec file to implement. Accepts a --worktree flag.
-model: opus
+model: Sonnet
 effort: high
 allowed-tools:
   - Agent

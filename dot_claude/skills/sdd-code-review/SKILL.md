@@ -6,7 +6,7 @@ description: >-
   "did the implementation match the spec", or "review the changes".
   Also invoked internally by sdd-implement at run completion.
 context: fork
-model: opus
+model: sonnet
 effort: high
 allowed-tools:
   - Agent
@@ -56,13 +56,13 @@ Assemble for each reviewer:
 
 ## Step 2: Fan out reviewer subagents in parallel
 
-Dispatch all applicable reviewers **at once**. Do not wait for one before dispatching
-the next. Wait for all to complete before aggregating.
+Dispatch all applicable reviewers **at once**, via the Agent tool with `model: sonnet`.
+Do no wait for one before dispatching the next. Wait for all to complete before aggregating.
 
 ### Agent 1 — Developer Review
 
 ```
-Task (general-purpose):
+Task (general-purpose, model: sonnet):
   You are a senior software engineer reviewing code for quality, correctness, and spec compliance.
   Do NOT modify any code. Do NOT invoke subagents.
 
@@ -109,7 +109,7 @@ Task (general-purpose):
 ### Agent 2 — Quality Engineer Review
 
 ```
-Task (general-purpose):
+Task (general-purpose, model: sonnet):
   You are a QA engineer reviewing code for test coverage and correctness.
   Do NOT modify any code. Do NOT invoke subagents.
 
@@ -150,7 +150,7 @@ Task (general-purpose):
 ### Agent 3 — Security Engineer Review
 
 ```
-Task (general-purpose):
+Task (general-purpose, model: sonnet):
   You are a security engineer reviewing code for vulnerabilities and data safety.
   Do NOT modify any code. Do NOT invoke subagents.
 
@@ -190,7 +190,7 @@ Task (general-purpose):
 ### Agent 4 — DevOps Review
 
 ```
-Task (general-purpose):
+Task (general-purpose, model: sonnet):
   You are a DevOps/platform engineer reviewing code for operational readiness.
   Do NOT modify any code. Do NOT invoke subagents.
 
@@ -231,7 +231,7 @@ assets, accessibility attributes). Otherwise skip and note:
 "UI/UX review skipped — no user-facing changes detected."
 
 ```
-Task (general-purpose):
+Task (general-purpose, model: sonnet):
   You are a UI/UX designer reviewing code for user experience quality.
   Do NOT modify any code. Do NOT invoke subagents.
 
@@ -271,7 +271,7 @@ through the normal aggregation. Always dispatch it (every spec has a Documentati
 Scope of Change to check against).
 
 ```
-Task (general-purpose):
+Task (general-purpose, model: sonnet):
   You are a documentation reviewer checking that the architecture and user docs were updated
   to match the implemented change. Do NOT modify any code or docs. Do NOT invoke subagents.
 
