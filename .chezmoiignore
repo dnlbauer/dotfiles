@@ -10,4 +10,5 @@ AGENTS.md
 .ssh/config.d/home
 .ssh/config.d/web
 .claude/settings.json
+.pi
 {{- end }}
