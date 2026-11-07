@@ -32,3 +32,26 @@ alias clip='xsel --clipboard'
 
 # keepass
 alias kp=keepassxc-cli
+
+## annoying defaults
+claude() {
+  if [[ ${1-} == resume ]]; then
+    command claude --resume "${@:2}"
+  else
+    command claude "$@"
+  fi
+}
+codex() {
+  if [[ ${1-} == --resume ]]; then
+    command codex resume "${@:2}"
+  else
+    command codex "$@"
+  fi
+}
+copilot() {
+  if [[ ${1-} == resume ]]; then
+    command claude --resume "${@:2}"
+  else
+    command claude "$@"
+  fi
+}
