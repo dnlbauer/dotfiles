@@ -4,6 +4,7 @@ CLAUDE.md
 CLAUDE.local.md
 key.txt.age
 install.sh
+AGENTS.md
 
 {{- if ne .machineClass "private" }}
 .ssh/config.d/home
