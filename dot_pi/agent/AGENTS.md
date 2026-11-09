@@ -3,6 +3,7 @@
 - Explain risky file edits and destructive commands before executing.
 - Do not commit, amend or rebase unless the user asks in this session.
 - Do not try to read, print or decrypt secrets (.env, vault password files, private keys, tokens)
+- When the user asks to install a Pi package, library, docker container, or similar, always pin the version to a stable version number, commit hash or equivalent to prevent supply chain attacks.
 
 ## Working
 - No assumptions or guessing: Never fabricate context. If information is missing, use tools to gather it or ask the user.

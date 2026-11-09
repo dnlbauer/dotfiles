@@ -11,8 +11,10 @@
     "npm:pi-btw@0.8.1",
     "npm:pi-system-prompt@0.1.4",
     "npm:pi-memory@0.4.2",
-    "npm:@heyhuynhgiabuu/pi-pretty@0.9.0",
-    "npm:@adeildo/pi-look@6.0.0"
+    "git:github.com/elidickinson/pi-claude-bridge@debda8d669d978f0deba5249e32d7f6a2a489d86",
+    "npm:@lglen/pi-parse-commands@1.3.2",
+    "npm:@gotgenes/pi-permission-system@42.0.0",
+    "npm:@ravshansbox/pi-vscode@0.5.8"
   ],
   "extensionChangelogVersions": {
     "{\"source\":\"npm:pi-subagents\",\"scope\":\"user\"}": "0.87.0",
@@ -28,12 +30,17 @@
     "{\"source\":\"npm:pi-memory@0.4.2\",\"scope\":\"user\"}": "0.4.2",
     "{\"source\":\"npm:@heyhuynhgiabuu/pi-pretty\",\"scope\":\"user\"}": "0.9.0",
     "{\"source\":\"npm:@heyhuynhgiabuu/pi-pretty@0.9.0\",\"scope\":\"user\"}": "0.9.0",
-    "{\"source\":\"npm:pi-tui-status-beautifier\",\"scope\":\"user\"}": "1.8.0"
+    "{\"source\":\"npm:pi-tui-status-beautifier\",\"scope\":\"user\"}": "1.8.0",
+    "{\"source\":\"git:github.com/elidickinson/pi-claude-bridge@debda8d669d978f0deba5249e32d7f6a2a489d86\",\"scope\":\"user\"}": "0.11.0",
+    "{\"source\":\"npm:@lglen/pi-parse-commands@1.3.2\",\"scope\":\"user\"}": "1.3.2",
+    "{\"source\":\"npm:@gotgenes/pi-permission-system@42.0.0\",\"scope\":\"user\"}": "42.0.0"
   },
   "enabledModels": [
     "mistral/zai-glm-5-3",
     "mistral/zai-glm-5-3-flash",
-    "mistral/mistral-large-4"
+    "mistral/mistral-large-4",
+    "claude-bridge/*",
+    "ollama/*"
   ],
   "beautifier": {
     "style": "nord",
@@ -46,5 +53,6 @@
     "blockImages": false
   },
   "enableSkillCommands": true,
-  "hideThinkingBlock": true
+  "hideThinkingBlock": true,
+  "quietStartup": false
 }
