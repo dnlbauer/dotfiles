@@ -46,6 +46,10 @@ if [ -f $LOCAL_ALIAS_FILE ]; then
     source $LOCAL_ALIAS_FILE
 fi
 
+NODE_BIN=$(print -l $HOME/.nvm/versions/node/v*/bin(N) | sort -V | tail -1)
+[[ -n $NODE_BIN ]] && export PATH="$NODE_BIN:/$PATH"
+unset NODE_BIN
+
 # configure oh-my-zsh/nvm for lazy loading nvm
 zstyle ':omz:plugins:nvm' lazy yes
 zstyle ':omz:plugins:nvm' autoload yes
